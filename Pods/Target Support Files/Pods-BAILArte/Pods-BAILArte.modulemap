@@ -1,0 +1,6 @@
+framework module Pods_BAILArte {
+  umbrella header "Pods-BAILArte-umbrella.h"
+
+  export *
+  module * { export * }
+}

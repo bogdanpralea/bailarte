@@ -16,6 +16,7 @@ class Request {
     var allVideos = [Video]()
     var feedback = [String]()
     var categories = [Category]()
+    var series = [Series]()
     var categoriesNumberOfVideos = [Int]()
     
     private init() {}
@@ -32,8 +33,16 @@ class Request {
         return categories
     }
     
-    func getVideos(for category: Category) -> [Video] {
-        return allVideos.filter({$0.category == category.name})
+    func getSeries() -> [Series] {
+        return series
+    }
+    
+    func getSeries(for category: Category) -> [Series] {
+        return series.filter({$0.category == category.name})
+    }
+    
+    func getVideos(for series: Series) -> [Video] {
+        return allVideos.filter({$0.series == series.name})
     }
     
     func setCategoriesNumberOfVideos() {

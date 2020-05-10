@@ -11,14 +11,15 @@ target 'BAILArte' do
 #  pod 'SideMenu'
   pod 'Firebase/Analytics'
 #  pod 'Firebase/Core'
-  pod 'Firebase/Firestore'
-  pod 'Firebase/Database'
+#  pod 'Firebase/Firestore'
+#  pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'FirebaseFirestoreSwift'
   pod 'FirebaseUI/OAuth'
   pod 'FirebaseUI/Auth'
-  pod 'FirebaseUI/Facebook'
+#  pod 'FirebaseUI/Facebook'
   
+  pod 'Google-Mobile-Ads-SDK'
   pod 'TPKeyboardAvoidingSwift'
   
   pod 'youtube-ios-player-helper'

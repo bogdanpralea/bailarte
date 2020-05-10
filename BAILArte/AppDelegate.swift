@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import UserNotifications
-import FBSDKCoreKit
+//import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,13 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        ApplicationDelegate.shared.application(
-            application,
-            didFinishLaunchingWithOptions: launchOptions
-        )
+//        ApplicationDelegate.shared.application(
+//            application,
+//            didFinishLaunchingWithOptions: launchOptions
+//        )
         
         FirebaseApp.configure()
-        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+
         Messaging.messaging().delegate = self
         
         if #available(iOS 10.0, *) {
@@ -51,16 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-        ApplicationDelegate.shared.application(
-            app,
-            open: url,
-            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-        )
-        
-    }
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//
+////        ApplicationDelegate.shared.application(
+////            app,
+////            open: url,
+////            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+////            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+////        )
+//
+//    }
 
 
     // MARK: UISceneSession Lifecycle

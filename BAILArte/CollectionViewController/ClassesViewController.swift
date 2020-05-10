@@ -19,7 +19,7 @@ class ClassesViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        navigationController?.navigationBar.isHidden = true
+        //        navigationController?.navigationBar.isHidden = true
         
         categories = Request.shared.getCategories()
         categoriesNumberOfVideos = Request.shared.categoriesNumberOfVideos
@@ -28,13 +28,18 @@ class ClassesViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//
-////        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-////        self.navigationController?.navigationBar.shadowImage = UIImage()
-////        self.navigationController?.navigationBar.isTranslucent = true
-////        self.navigationController?.view.backgroundColor = UIColor.clear
-//
+        //
+        ////        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        ////        self.navigationController?.navigationBar.shadowImage = UIImage()
+        ////        self.navigationController?.navigationBar.isTranslucent = true
+        ////        self.navigationController?.view.backgroundColor = UIColor.clear
+        //
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -65,28 +70,14 @@ class ClassesViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        goToCategory(at: indexPath.row)
-    }
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let nextViewController = segue.destination as? VideosViewController {
+        if let nextViewController = segue.destination as? SeriesViewController {
             if let indexPath = self.classesCollectionView.indexPathsForSelectedItems?.first?.row {
-            nextViewController.videos = Request.shared.getVideos(for: categories[indexPath])
-                
+                nextViewController.series = Request.shared.getSeries(for: categories[indexPath])
+                nextViewController.navigationItem.title = categories[indexPath].name
             }
         }
     }
     
-    func goToCategory(at index: Int) {
-        
-//        prepare(for: "showVideos", sender: <#T##Any?#>)
-        let vc = storyboard?.instantiateViewController(identifier: "VideosVc") as! VideosViewController
-        vc.videos = Request.shared.getVideos(for: categories[index])
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-
 }
 

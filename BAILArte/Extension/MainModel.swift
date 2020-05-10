@@ -9,7 +9,8 @@
 import Foundation
 
 public struct MainModel: Codable {
-     var categories: [Category]
-     var feedback: [String]
-     var videos: [Video]
+    var categories: [Category]
+    var feedback: [String]
+    var videos: [Video]
+    var series: [Series]
 }

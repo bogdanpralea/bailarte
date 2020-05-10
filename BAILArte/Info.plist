@@ -19,11 +19,9 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.843191161586-34g0tkh953qhd7vt0pd8ksdusoid0u15</string>
+				<string>fb2550182645245449</string>
 			</array>
 		</dict>
 	</array>
@@ -79,18 +77,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fb2550182645245449</string>
-      </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>2550182645245449</string>
-    <key>FacebookDisplayName</key>
-    <string>BailarteApp</string>
+	<key>FacebookAppID</key>
+	<string>2550182645245449</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-5448112549368078~3721565770</string>
+	<key>FacebookDisplayName</key>
+	<string>BailarteApp</string>
 </dict>
 </plist>

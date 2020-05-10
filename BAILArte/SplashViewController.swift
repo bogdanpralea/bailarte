@@ -26,7 +26,8 @@ class SplashViewController: UIViewController {
 //        playVideo()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            self.present(storyBoardName: "Main", controllerId: "LoginVC")
+//            self.present(storyBoardName: "Main", controllerId: "LoginVC")
+            self.present(storyBoardName: "Main", controllerId: "HomeId")
         })
     }
     
@@ -45,6 +46,7 @@ class SplashViewController: UIViewController {
                     Request.shared.allVideos = model.videos
                     Request.shared.feedback = model.feedback
                     Request.shared.categories = model.categories
+                    Request.shared.series = model.series
                     Request.shared.setCategoriesNumberOfVideos()
                 } else {
                     print("Document does not exist")

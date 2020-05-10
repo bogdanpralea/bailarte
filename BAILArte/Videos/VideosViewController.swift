@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADInterstitialDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var videos = [Video]()
+    var interstitial: GADInterstitial!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self
+        let request = GADRequest()
+        interstitial.load(request)
+                
 //        navigationController?.navigationBar.isHidden = false
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //               appDelegate.myOrientation = .portrait
@@ -46,16 +53,30 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        goToPlayer(at: indexPath.row)
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+        } else {
+          print("Ad wasn't ready")
+        }
     }
     
     func goToPlayer(at index: Int) {
         guard let vc = storyboard?.instantiateViewController(identifier: "PlayerVC") as? ViewController else { return }
         
-//        self.hidesBottomBarWhenPushed = true
         vc.urlString = videos[index].url
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+
+    /// Tells the delegate the interstitial had been animated off the screen.
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+      print("interstitialDidDismissScreen")
+        if let index = tableView.indexPathsForSelectedRows?.first {
+            goToPlayer(at: index.row)
+        }
+    }
+
+    
     
     @IBAction func dismissView(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)

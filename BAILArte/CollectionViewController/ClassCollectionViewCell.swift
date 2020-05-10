@@ -16,6 +16,11 @@ class ClassCollectionViewCell: UICollectionViewCell {
     
     func updateCell(with category: Category, nrOfVides: Int) {
         contentView.alpha = 0.9
+        
+        var image = UIImage()
+        
+//        imageView.image = UI
+        
 //        if let urlString = "category.url" {
 //            let url = URL(fileURLWithPath: urlString)
 //            DispatchQueue.global().async {

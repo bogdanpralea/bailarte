@@ -26,4 +26,9 @@ extension UIImage {
 
         return imageData?.base64EncodedString()
     }
+    
+    public func convertBase64ToImage(imageString: String) -> UIImage {
+        let imageData = Data(base64Encoded: imageString, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
+        return UIImage(data: imageData)!
+    }
 }

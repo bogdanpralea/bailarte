@@ -37,6 +37,14 @@ class VideoTableViewCell: UITableViewCell {
         genarateThumbnailFromYouTubeID(youTubeID: video.url)
     }
     
+    func update(with series: Series) {
+        titleLabel.text = series.name
+        instructorLabel.text = series.category
+        let image = UIImage()
+        thumbnailImageView?.image = image.convertBase64ToImage(imageString: series.picture)
+        thumbnailImageView.layer.borderColor = UIColor(hexString: "7B72DE").cgColor
+       
+    }
     
     func genarateThumbnailFromYouTubeID(youTubeID: String) {
         let urlString = "http://img.youtube.com/vi/\(youTubeID)/1.jpg"

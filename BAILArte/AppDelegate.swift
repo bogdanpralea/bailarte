@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import UserNotifications
+import VimeoNetworking
 //import FBSDKCoreKit
 
 @UIApplicationMain
@@ -27,7 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            application,
 //            didFinishLaunchingWithOptions: launchOptions
 //        )
-        
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)
+        ]
+
+        UINavigationBar.appearance().titleTextAttributes = attrs
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().backgroundColor = UIColor(hexString: "212132")
+       
+        vimeoAuthentication()
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
 
@@ -52,17 +62,99 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-//
-////        ApplicationDelegate.shared.application(
-////            app,
-////            open: url,
-////            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-////            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-////        )
-//
-//    }
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        //        ApplicationDelegate.shared.application(
+        //            app,
+        //            open: url,
+        //            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+        //            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        //        )
+        
+        // This handles the redirect URL opened by Vimeo when you complete code grant authentication.
+        // If your app isn't opening after you accept permissions on Vimeo, check that your app has the correct URL scheme registered.
+        
+        // See the README for more information.
+        AuthenticationController(client: VimeoClient.defaultClient, appConfiguration: AppConfiguration.defaultConfiguration, configureSessionManagerBlock: nil).codeGrant(responseURL: url) { result in
+            
+            switch result
+            {
+            case .success(let account):
+                print("authenticated successfully: \(account)")
+            case .failure(let error):
+                print("failure authenticating: \(error)")
+                
+                let title = "Code Grant Authentication Failed"
+                let message = "Make sure that your redirect URI is added to the dev portal"
+                
+                //                     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                //                     let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                //                     alert.addAction(action)
+                //                     self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+                print(title + ": " + message)
+            }
+        }
+            
+        return true
+    }
+    
+    
+    func vimeoAuthentication() {
+        let authenticationController = AuthenticationController(client: VimeoClient.defaultClient, appConfiguration: AppConfiguration.defaultConfiguration, configureSessionManagerBlock: nil)
+        authenticationController.accessToken(token: VimeoClient.accessToken) { result in
+            switch result
+            {
+            case .success(let account):
+                print("authenticated successfully: \(account)")
+                
+            case .failure(let error):
+                print("failure authenticating: \(error)")
+            }
+        }
+    }
+    
+    func vimeoAuth() {
+        // Starting the authentication process
+        
+        let authenticationController = AuthenticationController(client: VimeoClient.defaultClient, appConfiguration: AppConfiguration.defaultConfiguration, configureSessionManagerBlock: nil)
+        
+        // First, we try to load a preexisting account
+        
+        let loadedAccount: VIMAccount?
+        do
+        {
+            loadedAccount = try authenticationController.loadUserAccount()
+            print("content:\(loadedAccount)")
+        }
+        catch let error
+        {
+            loadedAccount = nil
+            print("error loading account \(error)")
+        }
+        
+        // If we didn't find an account to load or loading failed, we'll authenticate using client credentials
+        
+        if loadedAccount == nil
+        {
+            authenticationController.clientCredentialsGrant { result in
+                
+                switch result
+                {
+                case .success(let account):
+                    print("authenticated successfully: \(account)")
+                case .failure(let error):
+                    print("failure authenticating: \(error)")
+                    
+                    let title = "Client Credentials Authentication Failed"
+                    let message = "Make sure that your client identifier and client secret are set correctly in VimeoClient+Shared.swift"
+                    
+//                    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//                    splitViewController.present(alert, animated: true, completion: nil)
+                    print(title + ": " + message)
+                }
+            }
+        }
+    }
 
     // MARK: UISceneSession Lifecycle
 

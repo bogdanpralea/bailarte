@@ -13,6 +13,6 @@ public struct Video: Codable {
     var name: String
     var instructor: String
     var level: String
-    var url: String
+    var url: String?
     var series: String
 }

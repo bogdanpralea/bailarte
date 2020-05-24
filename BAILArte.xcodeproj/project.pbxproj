@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5360E11ECC44D1FDC839C3D8 /* Pods_BAILArte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 661388DAA3C7C52BD6BDC996 /* Pods_BAILArte.framework */; };
 		7912E2972438C7C500402727 /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912E2952438C7C500402727 /* ClassesViewController.swift */; };
 		7912E2982438C7C500402727 /* ClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912E2962438C7C500402727 /* ClassCollectionViewCell.swift */; };
 		7912E29A2438D9CC00402727 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7912E2992438D9CC00402727 /* SectionHeader.swift */; };
@@ -16,19 +17,21 @@
 		791F8914243F8A0700238D11 /* FeedbackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791F8913243F8A0700238D11 /* FeedbackTableViewCell.swift */; };
 		793FAEAB2466FAF2002CA006 /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FAEAA2466FAF2002CA006 /* SeriesViewController.swift */; };
 		793FAEAF2466FD91002CA006 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FAEAE2466FD91002CA006 /* Series.swift */; };
+		7942F5EE246ED4F0002223BA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7942F5ED246ED4F0002223BA /* StoreKit.framework */; };
+		7942F5F0246ED56C002223BA /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942F5EF246ED56C002223BA /* SubscriptionViewController.swift */; };
+		7942F5F3246EDD3E002223BA /* SubscriptionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942F5F2246EDD3E002223BA /* SubscriptionTypes.swift */; };
+		7942F5F5246EDD8B002223BA /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942F5F4246EDD8B002223BA /* IAPManager.swift */; };
 		794EB0432440C3E800F6AFC9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794EB0422440C3E800F6AFC9 /* UIColorExtension.swift */; };
 		794EB0452440C57200F6AFC9 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794EB0442440C57200F6AFC9 /* HomeTabBarController.swift */; };
 		795CA9E724420AE2004EA7CE /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9E624420AE2004EA7CE /* UIImageExtension.swift */; };
 		795CA9EA24422EA9004EA7CE /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9E924422EA9004EA7CE /* MainModel.swift */; };
-		795CA9EC24422EBF004EA7CE /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9EB24422EBF004EA7CE /* Categories.swift */; };
 		795CA9F42442331C004EA7CE /* Date+CurrenTimeMillis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9F32442331C004EA7CE /* Date+CurrenTimeMillis.swift */; };
 		795CA9F62442FA21004EA7CE /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9F52442FA21004EA7CE /* Feedback.swift */; };
-		795CA9FA244309C8004EA7CE /* FirestoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9F9244309C8004EA7CE /* FirestoreModel.swift */; };
-		795CA9FC2443154A004EA7CE /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9FB2443154A004EA7CE /* Videos.swift */; };
 		795CA9FE2443292B004EA7CE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9FD2443292B004EA7CE /* Category.swift */; };
 		795CAA00244329FB004EA7CE /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9FF244329FB004EA7CE /* Video.swift */; };
-		795CAA0324435C1C004EA7CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CAA0224435C1C004EA7CE /* Request.swift */; };
+		795CAA0324435C1C004EA7CE /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CAA0224435C1C004EA7CE /* FirebaseManager.swift */; };
 		795CAA0724436833004EA7CE /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CAA0624436833004EA7CE /* VideoTableViewCell.swift */; };
+		7961D81824757D18002A9E68 /* VimeoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7961D81724757D18002A9E68 /* VimeoClient.swift */; };
 		7968B9452427B2D500FBBE7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968B9442427B2D500FBBE7A /* AppDelegate.swift */; };
 		7968B9472427B2D500FBBE7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968B9462427B2D500FBBE7A /* SceneDelegate.swift */; };
 		7968B9492427B2D500FBBE7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968B9482427B2D500FBBE7A /* ViewController.swift */; };
@@ -36,6 +39,11 @@
 		7968B94E2427B2D700FBBE7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7968B94D2427B2D700FBBE7A /* Assets.xcassets */; };
 		7968B9512427B2D700FBBE7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7968B94F2427B2D700FBBE7A /* LaunchScreen.storyboard */; };
 		7968B95D2427B88800FBBE7A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968B95C2427B88800FBBE7A /* SplashViewController.swift */; };
+		79742F7E2469B2930057959A /* VimeoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79742F7D2469B2930057959A /* VimeoPlayerViewController.swift */; };
+		797CAE8724785A23009BB025 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CAE8624785A23009BB025 /* AlertViewController.swift */; };
+		797CAE8924785FDE009BB025 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CAE8824785FDE009BB025 /* AlertService.swift */; };
+		797CAE8B2479984B009BB025 /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CAE8A2479984B009BB025 /* SubscriptionTableViewCell.swift */; };
+		797CAE8D2479993A009BB025 /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797CAE8C24799939009BB025 /* SubscriptionModel.swift */; };
 		797E29972432238B002519E2 /* test.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 797E29962432238B002519E2 /* test.jpeg */; };
 		797F5B7124558330001DDB77 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F5B7024558330001DDB77 /* Answer.swift */; };
 		79B007A22427BB4900D89233 /* bailarte.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 79B007A12427BB4900D89233 /* bailarte.mp4 */; };
@@ -43,12 +51,11 @@
 		79B007A82427C09800D89233 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B007A72427C09800D89233 /* RootViewController.swift */; };
 		79B1E1A6245D71A0007CC942 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B1E1A5245D71A0007CC942 /* GoogleService-Info.plist */; };
 		79B1E1A8245D8011007CC942 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B1E1A7245D8011007CC942 /* LoginViewController.swift */; };
-		9B44176D3E8DCB6C55081C7F /* Pods_BAILArte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56A7E4596D49191C92999DE /* Pods_BAILArte.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1DC38439792D6E58FC22516E /* Pods-BAILArte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.release.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.release.xcconfig"; sourceTree = "<group>"; };
-		745BF8DD1E9EB39840C6596A /* Pods-BAILArte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.debug.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.debug.xcconfig"; sourceTree = "<group>"; };
+		4015BACC56555A4D8E036803 /* Pods-BAILArte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.debug.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.debug.xcconfig"; sourceTree = "<group>"; };
+		661388DAA3C7C52BD6BDC996 /* Pods_BAILArte.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAILArte.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7912E2952438C7C500402727 /* ClassesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassesViewController.swift; path = BAILArte/CollectionViewController/ClassesViewController.swift; sourceTree = SOURCE_ROOT; };
 		7912E2962438C7C500402727 /* ClassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassCollectionViewCell.swift; path = BAILArte/CollectionViewController/ClassCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		7912E2992438D9CC00402727 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SectionHeader.swift; path = BAILArte/CollectionViewController/SectionHeader.swift; sourceTree = SOURCE_ROOT; };
@@ -58,19 +65,21 @@
 		791F8913243F8A0700238D11 /* FeedbackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewCell.swift; sourceTree = "<group>"; };
 		793FAEAA2466FAF2002CA006 /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
 		793FAEAE2466FD91002CA006 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
+		7942F5ED246ED4F0002223BA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7942F5EF246ED56C002223BA /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubscriptionViewController.swift; path = "../New Group2/SubscriptionViewController.swift"; sourceTree = "<group>"; };
+		7942F5F2246EDD3E002223BA /* SubscriptionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTypes.swift; sourceTree = "<group>"; };
+		7942F5F4246EDD8B002223BA /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		794EB0422440C3E800F6AFC9 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		794EB0442440C57200F6AFC9 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		795CA9E624420AE2004EA7CE /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		795CA9E924422EA9004EA7CE /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainModel.swift; path = BAILArte/Extension/MainModel.swift; sourceTree = SOURCE_ROOT; };
-		795CA9EB24422EBF004EA7CE /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Categories.swift; path = BAILArte/Extension/Categories.swift; sourceTree = SOURCE_ROOT; };
 		795CA9F32442331C004EA7CE /* Date+CurrenTimeMillis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CurrenTimeMillis.swift"; sourceTree = "<group>"; };
 		795CA9F52442FA21004EA7CE /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
-		795CA9F9244309C8004EA7CE /* FirestoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreModel.swift; sourceTree = "<group>"; };
-		795CA9FB2443154A004EA7CE /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
 		795CA9FD2443292B004EA7CE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		795CA9FF244329FB004EA7CE /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		795CAA0224435C1C004EA7CE /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Request.swift; path = BAILArte/Entities/Request.swift; sourceTree = SOURCE_ROOT; };
+		795CAA0224435C1C004EA7CE /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = BAILArte/Entities/FirebaseManager.swift; sourceTree = SOURCE_ROOT; };
 		795CAA0624436833004EA7CE /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		7961D81724757D18002A9E68 /* VimeoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoClient.swift; sourceTree = "<group>"; };
 		7968B9412427B2D500FBBE7A /* BAILArte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BAILArte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7968B9442427B2D500FBBE7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7968B9462427B2D500FBBE7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +89,12 @@
 		7968B9502427B2D700FBBE7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7968B9522427B2D700FBBE7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7968B95C2427B88800FBBE7A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		79742F7D2469B2930057959A /* VimeoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoPlayerViewController.swift; sourceTree = "<group>"; };
 		7974AE7F245B299A006DFE05 /* BAILArte.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BAILArte.entitlements; sourceTree = "<group>"; };
+		797CAE8624785A23009BB025 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		797CAE8824785FDE009BB025 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		797CAE8A2479984B009BB025 /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		797CAE8C24799939009BB025 /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
 		797E29962432238B002519E2 /* test.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpeg; sourceTree = "<group>"; };
 		797F5B7024558330001DDB77 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		79B007A12427BB4900D89233 /* bailarte.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bailarte.mp4; path = ../../../../Downloads/bailarte.mp4; sourceTree = "<group>"; };
@@ -88,7 +102,7 @@
 		79B007A72427C09800D89233 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = BAILArte/RootViewController.swift; sourceTree = SOURCE_ROOT; };
 		79B1E1A5245D71A0007CC942 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79B1E1A7245D8011007CC942 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		B56A7E4596D49191C92999DE /* Pods_BAILArte.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAILArte.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF8B3878009896E7615CDD9A /* Pods-BAILArte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.release.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B44176D3E8DCB6C55081C7F /* Pods_BAILArte.framework in Frameworks */,
+				5360E11ECC44D1FDC839C3D8 /* Pods_BAILArte.framework in Frameworks */,
+				7942F5EE246ED4F0002223BA /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +121,8 @@
 		4D971EFD0868646182ECC299 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				745BF8DD1E9EB39840C6596A /* Pods-BAILArte.debug.xcconfig */,
-				1DC38439792D6E58FC22516E /* Pods-BAILArte.release.xcconfig */,
+				4015BACC56555A4D8E036803 /* Pods-BAILArte.debug.xcconfig */,
+				BF8B3878009896E7615CDD9A /* Pods-BAILArte.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -129,17 +144,26 @@
 			name = Feedback;
 			sourceTree = "<group>";
 		};
+		7942F5F1246EDD0A002223BA /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				7942F5F2246EDD3E002223BA /* SubscriptionTypes.swift */,
+				7942F5F4246EDD8B002223BA /* IAPManager.swift */,
+				7942F5EF246ED56C002223BA /* SubscriptionViewController.swift */,
+				797CAE8A2479984B009BB025 /* SubscriptionTableViewCell.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
 		795CA9E824422E7B004EA7CE /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				795CA9E924422EA9004EA7CE /* MainModel.swift */,
 				793FAEAE2466FD91002CA006 /* Series.swift */,
+				797CAE8C24799939009BB025 /* SubscriptionModel.swift */,
 				797F5B7024558330001DDB77 /* Answer.swift */,
 				795CA9F52442FA21004EA7CE /* Feedback.swift */,
-				795CA9F9244309C8004EA7CE /* FirestoreModel.swift */,
-				795CA9EB24422EBF004EA7CE /* Categories.swift */,
 				795CA9FD2443292B004EA7CE /* Category.swift */,
-				795CA9FB2443154A004EA7CE /* Videos.swift */,
 				795CA9FF244329FB004EA7CE /* Video.swift */,
 			);
 			path = Entities;
@@ -148,7 +172,10 @@
 		795CAA0124435B96004EA7CE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				795CAA0224435C1C004EA7CE /* Request.swift */,
+				795CAA0224435C1C004EA7CE /* FirebaseManager.swift */,
+				797CAE8624785A23009BB025 /* AlertViewController.swift */,
+				7961D81724757D18002A9E68 /* VimeoClient.swift */,
+				797CAE8824785FDE009BB025 /* AlertService.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -157,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				7968B9482427B2D500FBBE7A /* ViewController.swift */,
+				79742F7D2469B2930057959A /* VimeoPlayerViewController.swift */,
 				7912E29B2438E61400402727 /* VideosViewController.swift */,
 				795CAA0624436833004EA7CE /* VideoTableViewCell.swift */,
 				793FAEAA2466FAF2002CA006 /* SeriesViewController.swift */,
@@ -170,7 +198,7 @@
 				7968B9432427B2D500FBBE7A /* BAILArte */,
 				7968B9422427B2D500FBBE7A /* Products */,
 				4D971EFD0868646182ECC299 /* Pods */,
-				D95F96BF931AEA89243E8909 /* Frameworks */,
+				BFC05293478AD1C2B4303624 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +219,7 @@
 				7968B95C2427B88800FBBE7A /* SplashViewController.swift */,
 				794EB0442440C57200F6AFC9 /* HomeTabBarController.swift */,
 				79B1E1A7245D8011007CC942 /* LoginViewController.swift */,
+				7942F5F1246EDD0A002223BA /* Subscription */,
 				795CAA05244366CB004EA7CE /* Videos */,
 				795CAA0124435B96004EA7CE /* Utils */,
 				795CA9E824422E7B004EA7CE /* Entities */,
@@ -239,10 +268,11 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
-		D95F96BF931AEA89243E8909 /* Frameworks */ = {
+		BFC05293478AD1C2B4303624 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B56A7E4596D49191C92999DE /* Pods_BAILArte.framework */,
+				7942F5ED246ED4F0002223BA /* StoreKit.framework */,
+				661388DAA3C7C52BD6BDC996 /* Pods_BAILArte.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -254,12 +284,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7968B9552427B2D700FBBE7A /* Build configuration list for PBXNativeTarget "BAILArte" */;
 			buildPhases = (
-				738ABF8B4F961BD04AA998E9 /* [CP] Check Pods Manifest.lock */,
+				29BAA26CC017FEECF87A0869 /* [CP] Check Pods Manifest.lock */,
 				7968B93D2427B2D500FBBE7A /* Sources */,
 				7968B93E2427B2D500FBBE7A /* Frameworks */,
 				7968B93F2427B2D500FBBE7A /* Resources */,
-				B4FEEB26DB7857B76D820470 /* [CP] Embed Pods Frameworks */,
-				49502B96D3E0B7E210994E1A /* [CP] Copy Pods Resources */,
+				51D809D6B72AE92722E04599 /* [CP] Embed Pods Frameworks */,
+				F2131D7B61523B2835806419 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,24 +350,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		49502B96D3E0B7E210994E1A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		738ABF8B4F961BD04AA998E9 /* [CP] Check Pods Manifest.lock */ = {
+		29BAA26CC017FEECF87A0869 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,7 +372,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B4FEEB26DB7857B76D820470 /* [CP] Embed Pods Frameworks */ = {
+		51D809D6B72AE92722E04599 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -376,6 +389,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F2131D7B61523B2835806419 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -383,19 +413,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7942F5F5246EDD8B002223BA /* IAPManager.swift in Sources */,
 				7912E29C2438E61400402727 /* VideosViewController.swift in Sources */,
 				795CA9F42442331C004EA7CE /* Date+CurrenTimeMillis.swift in Sources */,
+				7961D81824757D18002A9E68 /* VimeoClient.swift in Sources */,
 				794EB0432440C3E800F6AFC9 /* UIColorExtension.swift in Sources */,
 				7968B9492427B2D500FBBE7A /* ViewController.swift in Sources */,
 				7968B9452427B2D500FBBE7A /* AppDelegate.swift in Sources */,
 				795CAA00244329FB004EA7CE /* Video.swift in Sources */,
-				795CAA0324435C1C004EA7CE /* Request.swift in Sources */,
+				795CAA0324435C1C004EA7CE /* FirebaseManager.swift in Sources */,
+				797CAE8924785FDE009BB025 /* AlertService.swift in Sources */,
 				79B007A82427C09800D89233 /* RootViewController.swift in Sources */,
-				795CA9EC24422EBF004EA7CE /* Categories.swift in Sources */,
-				795CA9FA244309C8004EA7CE /* FirestoreModel.swift in Sources */,
 				7968B9472427B2D500FBBE7A /* SceneDelegate.swift in Sources */,
 				79B1E1A8245D8011007CC942 /* LoginViewController.swift in Sources */,
+				7942F5F3246EDD3E002223BA /* SubscriptionTypes.swift in Sources */,
 				7912E2972438C7C500402727 /* ClassesViewController.swift in Sources */,
+				79742F7E2469B2930057959A /* VimeoPlayerViewController.swift in Sources */,
+				797CAE8D2479993A009BB025 /* SubscriptionModel.swift in Sources */,
 				791F890D243F759B00238D11 /* ContactViewController.swift in Sources */,
 				791F8912243F89F200238D11 /* FeedbackViewController.swift in Sources */,
 				7912E29A2438D9CC00402727 /* SectionHeader.swift in Sources */,
@@ -404,14 +438,16 @@
 				791F8914243F8A0700238D11 /* FeedbackTableViewCell.swift in Sources */,
 				795CA9EA24422EA9004EA7CE /* MainModel.swift in Sources */,
 				7912E2982438C7C500402727 /* ClassCollectionViewCell.swift in Sources */,
+				797CAE8B2479984B009BB025 /* SubscriptionTableViewCell.swift in Sources */,
 				79B007A52427BC5600D89233 /* UIViewController+Extension.swift in Sources */,
+				797CAE8724785A23009BB025 /* AlertViewController.swift in Sources */,
 				7968B95D2427B88800FBBE7A /* SplashViewController.swift in Sources */,
 				794EB0452440C57200F6AFC9 /* HomeTabBarController.swift in Sources */,
 				795CA9FE2443292B004EA7CE /* Category.swift in Sources */,
-				795CA9FC2443154A004EA7CE /* Videos.swift in Sources */,
 				795CA9E724420AE2004EA7CE /* UIImageExtension.swift in Sources */,
 				793FAEAB2466FAF2002CA006 /* SeriesViewController.swift in Sources */,
 				795CA9F62442FA21004EA7CE /* Feedback.swift in Sources */,
+				7942F5F0246ED56C002223BA /* SubscriptionViewController.swift in Sources */,
 				795CAA0724436833004EA7CE /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,7 +590,7 @@
 		};
 		7968B9562427B2D700FBBE7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 745BF8DD1E9EB39840C6596A /* Pods-BAILArte.debug.xcconfig */;
+			baseConfigurationReference = 4015BACC56555A4D8E036803 /* Pods-BAILArte.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BAILArte/BAILArte.entitlements;
@@ -570,13 +606,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Bailarte Development";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		7968B9572427B2D700FBBE7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DC38439792D6E58FC22516E /* Pods-BAILArte.release.xcconfig */;
+			baseConfigurationReference = BF8B3878009896E7615CDD9A /* Pods-BAILArte.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BAILArte/BAILArte.entitlements;
@@ -592,7 +628,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Bailarte Development";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -8,6 +8,9 @@
 
 import UIKit
 import GoogleMobileAds
+import AVFoundation
+import VimeoNetworking
+import AVKit
 
 class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GADInterstitialDelegate {
     
@@ -15,6 +18,7 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var videos = [Video]()
     var interstitial: GADInterstitial!
+    let alertservice = AlertService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,23 +27,15 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         interstitial.delegate = self
         let request = GADRequest()
         interstitial.load(request)
-                
-//        navigationController?.navigationBar.isHidden = false
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//               appDelegate.myOrientation = .portrait
-//               UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
+        
     }
     
-
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
         self.tabBarController?.tabBar.isHidden = false
-        
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//               appDelegate.myOrientation = .portrait
-//               UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videos.count
     }
@@ -53,30 +49,75 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if interstitial.isReady {
-          interstitial.present(fromRootViewController: self)
-        } else {
-          print("Ad wasn't ready")
+        let video = videos[indexPath.row]
+        if let _ = video.url {
+            if interstitial.isReady {
+                interstitial.present(fromRootViewController: self)
+            } else {
+                print("Ad wasn't ready")
+                goToSelectedVideo()
+            }
+        }
+        else {
+            let alert = alertservice.alert() { [weak self] in
+                self?.tabBarController?.selectedIndex = 3
+            }
+            
+            present(alert, animated: true)
         }
     }
     
     func goToPlayer(at index: Int) {
-        guard let vc = storyboard?.instantiateViewController(identifier: "PlayerVC") as? ViewController else { return }
+        guard let vc = storyboard?.instantiateViewController(identifier: "VimeoPlayerVC") as? VimeoPlayerViewController else { return }
         
-        vc.urlString = videos[index].url
+        //        vc.urlString = videos[index].url
         navigationController?.pushViewController(vc, animated: true)
     }
     
-
+    
     /// Tells the delegate the interstitial had been animated off the screen.
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-      print("interstitialDidDismissScreen")
+        print("interstitialDidDismissScreen")
+        goToSelectedVideo()
+    }
+    
+    func goToSelectedVideo() {
         if let index = tableView.indexPathsForSelectedRows?.first {
-            goToPlayer(at: index.row)
+            if let urlString = videos[index.row].url {
+                getVideoFromVimeo(for: urlString)
+            }
         }
     }
-
     
+    
+    func getVideoFromVimeo(for urlString: String) {
+        let videoRequest = Request<VIMVideo>(path: "/videos/\(urlString)")
+        let _ = VimeoClient.defaultClient.request(videoRequest) { result in
+            switch result {
+            case .success(let response):
+                
+                let video: VIMVideo = response.model
+                if let file = video.files?.last as? VIMVideoFile {
+                    
+                    if let urlString = file.link {
+                        self.playVideo(from: urlString)
+                    }
+                }
+            case .failure(let error):
+                print("error retrieving video: \(error)")
+            }
+        }
+    }
+    
+    func playVideo(from urlString: String) {
+        let player = AVPlayer(url: URL(string: urlString)!)
+        let vc = AVPlayerViewController()
+        vc.player = player
+        
+        self.present(vc, animated: true) {
+            vc.player?.play()
+        }
+    }
     
     @IBAction func dismissView(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)

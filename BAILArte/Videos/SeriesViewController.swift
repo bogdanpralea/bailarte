@@ -18,7 +18,7 @@ class SeriesViewController: UIViewController, UITabBarDelegate, UITableViewDataS
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-//        self.navigationItem.title = "test"
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "191839")
     }
     
     
@@ -39,7 +39,7 @@ class SeriesViewController: UIViewController, UITabBarDelegate, UITableViewDataS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextViewController = segue.destination as? VideosViewController {
             if let indexPath = tableView.indexPathsForSelectedRows?.first {
-                nextViewController.videos = Request.shared.getVideos(for: series[indexPath.row])
+                nextViewController.videos = FirebaseManager.shared.getVideos(for: series[indexPath.row])
                 nextViewController.navigationItem.title = series[indexPath.row].name
             }
         }

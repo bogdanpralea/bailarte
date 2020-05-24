@@ -22,7 +22,7 @@ class FeedbackViewController: UIViewController, UITableViewDataSource, FeedbackT
         
         // Do any additional setup after loading the view.
 
-        questionsArray = Request.shared.getFeedback()
+        questionsArray = FirebaseManager.shared.getFeedback()
         tableView.reloadData()
         
     }

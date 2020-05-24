@@ -11,5 +11,5 @@ import UIKit
 public struct Series: Codable {
     let category: String
     let name: String
-    let picture: String
+    let picture: String?
 }

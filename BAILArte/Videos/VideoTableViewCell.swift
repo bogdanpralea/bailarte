@@ -34,14 +34,22 @@ class VideoTableViewCell: UITableViewCell {
         levelLabel.text = video.level
         
         thumbnailImageView.layer.borderColor = UIColor(hexString: "7B72DE").cgColor
-        genarateThumbnailFromYouTubeID(youTubeID: video.url)
+        if let url = video.url {
+//            genarateThumbnailFromYouTubeID(youTubeID: url)
+        }
+        else {
+            thumbnailImageView.image = UIImage(named: "lock.pdf")
+        }
     }
     
     func update(with series: Series) {
         titleLabel.text = series.name
         instructorLabel.text = series.category
-        let image = UIImage()
-        thumbnailImageView?.image = image.convertBase64ToImage(imageString: series.picture)
+        if let picture = series.picture, !picture.isEmpty {
+            let image = UIImage()
+            thumbnailImageView?.image = image.convertBase64ToImage(imageString: picture)
+        }
+        
         thumbnailImageView.layer.borderColor = UIColor(hexString: "7B72DE").cgColor
        
     }

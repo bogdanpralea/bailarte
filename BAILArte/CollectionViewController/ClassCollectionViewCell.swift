@@ -17,7 +17,12 @@ class ClassCollectionViewCell: UICollectionViewCell {
     func updateCell(with category: Category, nrOfVides: Int) {
         contentView.alpha = 0.9
         
-        var image = UIImage()
+//        var image = UIImage()
+        
+        if let picture = category.picture, !picture.isEmpty {
+            let image = UIImage()
+            imageView.image = image.convertBase64ToImage(imageString: picture)
+        }
         
 //        imageView.image = UI
         

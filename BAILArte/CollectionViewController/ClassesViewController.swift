@@ -21,8 +21,8 @@ class ClassesViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         //        navigationController?.navigationBar.isHidden = true
         
-        categories = Request.shared.getCategories()
-        categoriesNumberOfVideos = Request.shared.categoriesNumberOfVideos
+        categories = FirebaseManager.shared.getCategories()
+        categoriesNumberOfVideos = FirebaseManager.shared.categoriesNumberOfVideos
         classesCollectionView.reloadData()
     }
     
@@ -73,7 +73,7 @@ class ClassesViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextViewController = segue.destination as? SeriesViewController {
             if let indexPath = self.classesCollectionView.indexPathsForSelectedItems?.first?.row {
-                nextViewController.series = Request.shared.getSeries(for: categories[indexPath])
+                nextViewController.series = FirebaseManager.shared.getSeries(for: categories[indexPath])
                 nextViewController.navigationItem.title = categories[indexPath].name
             }
         }

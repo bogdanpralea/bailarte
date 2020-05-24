@@ -15,8 +15,8 @@ class ContactViewController: UIViewController, MFMailComposeViewControllerDelega
     @IBOutlet private var mapViewS: MKMapView!
     @IBOutlet private var mapViewC: MKMapView!
     
-    let firstContactNumber = "0745319335"
-    let secondContactnumber = "07466688190"
+    let firstContactNumber = "0747171850"
+    let secondContactnumber = "0744139532"
     let contactEmail = ""
     
     override func viewDidLoad() {
@@ -51,7 +51,7 @@ class ContactViewController: UIViewController, MFMailComposeViewControllerDelega
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["pfeidemine@yahoo.com"])
+            mail.setToRecipients(["bailarte.salsa@gmail.com"])
             mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
 
             present(mail, animated: true)

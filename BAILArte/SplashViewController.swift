@@ -23,9 +23,9 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        playVideo()
+        playVideo()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(9), execute: {
 //            self.present(storyBoardName: "Main", controllerId: "LoginVC")
             self.present(storyBoardName: "Main", controllerId: "HomeId")
         })
@@ -43,11 +43,11 @@ class SplashViewController: UIViewController {
             switch result {
             case .success(let mainModel):
                 if let model = mainModel {
-                    Request.shared.allVideos = model.videos
-                    Request.shared.feedback = model.feedback
-                    Request.shared.categories = model.categories
-                    Request.shared.series = model.series
-                    Request.shared.setCategoriesNumberOfVideos()
+                    FirebaseManager.shared.allVideos = model.videos
+                    FirebaseManager.shared.feedback = model.feedback
+                    FirebaseManager.shared.categories = model.categories
+                    FirebaseManager.shared.series = model.series
+                    FirebaseManager.shared.setCategoriesNumberOfVideos()
                 } else {
                     print("Document does not exist")
                 }

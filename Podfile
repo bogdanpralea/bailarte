@@ -19,6 +19,8 @@ target 'BAILArte' do
   pod 'FirebaseUI/Auth'
 #  pod 'FirebaseUI/Facebook'
   
+  pod 'VimeoNetworking'
+  
   pod 'Google-Mobile-Ads-SDK'
   pod 'TPKeyboardAvoidingSwift'
   

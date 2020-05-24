@@ -10,5 +10,5 @@ import UIKit
 
 public struct Category: Codable {
     var name: String
-    var picture: String
+    var picture: String?
 }

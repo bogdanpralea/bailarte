@@ -50,4 +50,6 @@ class FirebaseManager {
             categoriesNumberOfVideos.insert(allVideos.filter({$0.category == category.name}).count, at: i)
         }
     }
+    
+
  }

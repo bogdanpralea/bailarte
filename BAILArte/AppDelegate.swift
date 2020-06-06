@@ -37,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "212132")
        
-        vimeoAuthentication()
+//        vimeoAuthentication()
+        VimeoManager.shared.vimeoAuthentication()
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
 
@@ -113,48 +114,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func vimeoAuth() {
-        // Starting the authentication process
-        
-        let authenticationController = AuthenticationController(client: VimeoClient.defaultClient, appConfiguration: AppConfiguration.defaultConfiguration, configureSessionManagerBlock: nil)
-        
-        // First, we try to load a preexisting account
-        
-        let loadedAccount: VIMAccount?
-        do
-        {
-            loadedAccount = try authenticationController.loadUserAccount()
-            print("content:\(loadedAccount)")
-        }
-        catch let error
-        {
-            loadedAccount = nil
-            print("error loading account \(error)")
-        }
-        
-        // If we didn't find an account to load or loading failed, we'll authenticate using client credentials
-        
-        if loadedAccount == nil
-        {
-            authenticationController.clientCredentialsGrant { result in
-                
-                switch result
-                {
-                case .success(let account):
-                    print("authenticated successfully: \(account)")
-                case .failure(let error):
-                    print("failure authenticating: \(error)")
-                    
-                    let title = "Client Credentials Authentication Failed"
-                    let message = "Make sure that your client identifier and client secret are set correctly in VimeoClient+Shared.swift"
-                    
-//                    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//                    splitViewController.present(alert, animated: true, completion: nil)
-                    print(title + ": " + message)
-                }
-            }
-        }
-    }
+//    func vimeoAuth() {
+//        // Starting the authentication process
+//
+//        let authenticationController = AuthenticationController(client: VimeoClient.defaultClient, appConfiguration: AppConfiguration.defaultConfiguration, configureSessionManagerBlock: nil)
+//
+//        // First, we try to load a preexisting account
+//
+//        let loadedAccount: VIMAccount?
+//        do
+//        {
+//            loadedAccount = try authenticationController.loadUserAccount()
+//            print("content:\(loadedAccount)")
+//        }
+//        catch let error
+//        {
+//            loadedAccount = nil
+//            print("error loading account \(error)")
+//        }
+//
+//        // If we didn't find an account to load or loading failed, we'll authenticate using client credentials
+//
+//        if loadedAccount == nil
+//        {
+//            authenticationController.clientCredentialsGrant { result in
+//
+//                switch result
+//                {
+//                case .success(let account):
+//                    print("authenticated successfully: \(account)")
+//                case .failure(let error):
+//                    print("failure authenticating: \(error)")
+//
+//                    let title = "Client Credentials Authentication Failed"
+//                    let message = "Make sure that your client identifier and client secret are set correctly in VimeoClient+Shared.swift"
+//
+////                    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+////                    splitViewController.present(alert, animated: true, completion: nil)
+//                    print(title + ": " + message)
+//                }
+//            }
+//        }
+//    }
 
     // MARK: UISceneSession Lifecycle
 

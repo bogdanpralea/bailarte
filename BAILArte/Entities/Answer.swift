@@ -10,5 +10,5 @@ import UIKit
 
 struct Answer: Codable {
     let question: String
-    let answer: String
+    var answer: String
 }

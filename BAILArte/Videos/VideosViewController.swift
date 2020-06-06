@@ -66,15 +66,7 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             present(alert, animated: true)
         }
     }
-    
-    func goToPlayer(at index: Int) {
-        guard let vc = storyboard?.instantiateViewController(identifier: "VimeoPlayerVC") as? VimeoPlayerViewController else { return }
-        
-        //        vc.urlString = videos[index].url
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
+
     /// Tells the delegate the interstitial had been animated off the screen.
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         print("interstitialDidDismissScreen")
@@ -91,18 +83,23 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func getVideoFromVimeo(for urlString: String) {
-        let videoRequest = Request<VIMVideo>(path: "/videos/\(urlString)")
+//        let videoRequest = Request<VIMVideo>(path: "/videos/\(urlString)")
+        let videoRequest = Request<[VIMVideo]>(path: "/me/videos")
         let _ = VimeoClient.defaultClient.request(videoRequest) { result in
             switch result {
             case .success(let response):
                 
-                let video: VIMVideo = response.model
-                if let file = video.files?.last as? VIMVideoFile {
-                    
-                    if let urlString = file.link {
-                        self.playVideo(from: urlString)
-                    }
-                }
+                let videos = response.model
+                print("")
+//                let video: VIMVideo =
+//                let video: VIMVideo = response.model
+//                if let file = video.files?.last as? VIMVideoFile {
+//
+//                    if let urlString = file.link {
+//                        self.playVideo(from: urlString)
+//                    }
+////                    if let thumbnailUrlString = video.pictureCollection?.pictures?.first
+//                }
             case .failure(let error):
                 print("error retrieving video: \(error)")
             }

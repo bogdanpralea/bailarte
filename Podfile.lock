@@ -361,14 +361,10 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
-  - PlayerKit (2.0.0)
   - PromisesObjC (1.2.8)
   - Protobuf (3.11.4)
   - TPKeyboardAvoidingSwift (3.2)
   - VimeoNetworking (4.1.0)
-  - youtube-ios-player-helper (0.1.6)
-  - youtube-ios-player-helper-swift (1.1)
-  - YoutubePlayer-in-WKWebView (0.3.4)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -377,12 +373,8 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FirebaseUI/OAuth
   - Google-Mobile-Ads-SDK
-  - PlayerKit
   - TPKeyboardAvoidingSwift
   - VimeoNetworking
-  - youtube-ios-player-helper
-  - youtube-ios-player-helper-swift
-  - YoutubePlayer-in-WKWebView
 
 SPEC REPOS:
   trunk:
@@ -412,14 +404,10 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
-    - PlayerKit
     - PromisesObjC
     - Protobuf
     - TPKeyboardAvoidingSwift
     - VimeoNetworking
-    - youtube-ios-player-helper
-    - youtube-ios-player-helper-swift
-    - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -448,15 +436,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
-  PlayerKit: cacafe8ef15294e2280d002a5c71faf07947a1a9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   TPKeyboardAvoidingSwift: ce1a75e0bc3af6b485f8bfa1d0a8320cfc565851
   VimeoNetworking: faca97d7b158a74d96afb460011e2dc69651c051
-  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
-  youtube-ios-player-helper-swift: 51a3c5325317c8271d0c7985c1bbe5a252ffb2fd
-  YoutubePlayer-in-WKWebView: af2f5929fc78882d94bfdfeea999b661b78d9717
 
-PODFILE CHECKSUM: 360d93950d77574bfac10e2ea43cf9a49366ce7b
+PODFILE CHECKSUM: df7ac2367c55d4d55d3b5cb437ce1bbe778a3cc3
 
 COCOAPODS: 1.8.4

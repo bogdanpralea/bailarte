@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import youtube_ios_player_helper_swift
 
 class ClassesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     

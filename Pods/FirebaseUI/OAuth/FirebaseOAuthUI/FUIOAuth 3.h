@@ -23,6 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface FUIOAuth : NSObject <FUIAuthProvider>
 
+/** @property buttonAlignment
+    @brief The alignment of the icon and text of the button.
+ */
+@property(nonatomic, readwrite) FUIButtonAlignment buttonAlignment;
+
 /** @fn init
     @brief Please use `initWithAuthUI:providerID:providerName:buttonColor:iconImage:scopes:
         customParameters:` instead.
@@ -60,6 +65,31 @@ NS_ASSUME_NONNULL_BEGIN
               customParameters:(nullable NSDictionary<NSString *, NSString*> *)customParameters
                   loginHintKey:(nullable NSString *)loginHintKey
     NS_DESIGNATED_INITIALIZER;
+
+/** @fn twitterAuthProvider
+    @brief Built-in OAuth provider for Twitter.
+*/
++ (FUIOAuth *)twitterAuthProvider;
+
+/** @fn githubAuthProvider
+    @brief Built-in OAuth provider for Github.
+*/
++ (FUIOAuth *)githubAuthProvider;
+
+/** @fn microsoftAuthProvider
+    @brief Built-in OAuth provider for Microsoft.
+*/
++ (FUIOAuth *)microsoftAuthProvider;
+
+/** @fn yahooAuthProvider
+    @brief Built-in OAuth provider for Yahoo.
+*/
++ (FUIOAuth *)yahooAuthProvider;
+
+/** @fn appleAuthProvider
+    @brief Built-in OAuth provider for Apple.
+*/
++ (FUIOAuth *)appleAuthProvider API_AVAILABLE(ios(13.0));
 
 @end
 

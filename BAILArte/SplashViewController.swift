@@ -17,15 +17,17 @@ class SplashViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+//        VimeoManager.shared.getVideoFromVimeo()
         getData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        playVideo()
+//        playVideo()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(9), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
 //            self.present(storyBoardName: "Main", controllerId: "LoginVC")
             self.present(storyBoardName: "Main", controllerId: "HomeId")
         })

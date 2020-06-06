@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
-import AVKit
 
 class VideoTableViewCell: UITableViewCell {
     
@@ -34,8 +32,17 @@ class VideoTableViewCell: UITableViewCell {
         levelLabel.text = video.level
         
         thumbnailImageView.layer.borderColor = UIColor(hexString: "7B72DE").cgColor
-        if let url = video.url {
-//            genarateThumbnailFromYouTubeID(youTubeID: url)
+        if let url = video.thumbnail {
+
+                // just not to cause a deadlock in UI!
+            DispatchQueue.global().async {
+                guard let imageData = try? Data(contentsOf: URL(string: url)!) else { return }
+
+                let image = UIImage(data: imageData)
+                DispatchQueue.main.async {
+                    self.thumbnailImageView.image = image
+                }
+            }
         }
         else {
             thumbnailImageView.image = UIImage(named: "lock.pdf")
@@ -54,10 +61,6 @@ class VideoTableViewCell: UITableViewCell {
        
     }
     
-    func genarateThumbnailFromYouTubeID(youTubeID: String) {
-        let urlString = "http://img.youtube.com/vi/\(youTubeID)/1.jpg"
-        let image = try! (UIImage(withContentsOfUrl: urlString))!
-        thumbnailImageView.image = image
-    }
+
     
 }

@@ -26,7 +26,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>2550182645245449</string>
+	<key>FacebookDisplayName</key>
+	<string>BailarteApp</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-5448112549368078~3721565770</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -34,6 +40,11 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -77,11 +88,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>FacebookAppID</key>
-	<string>2550182645245449</string>
-	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-5448112549368078~3721565770</string>
-	<key>FacebookDisplayName</key>
-	<string>BailarteApp</string>
 </dict>
 </plist>

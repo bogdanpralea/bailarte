@@ -30,10 +30,11 @@
 		795CAA00244329FB004EA7CE /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CA9FF244329FB004EA7CE /* Video.swift */; };
 		795CAA0324435C1C004EA7CE /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CAA0224435C1C004EA7CE /* FirebaseManager.swift */; };
 		795CAA0724436833004EA7CE /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795CAA0624436833004EA7CE /* VideoTableViewCell.swift */; };
+		7960DE2B24810A79008BC296 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7960DE2924810A73008BC296 /* Roboto-Regular.ttf */; };
+		7960DE2C24810A79008BC296 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7960DE2A24810A79008BC296 /* Roboto-Medium.ttf */; };
 		7961D81824757D18002A9E68 /* VimeoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7961D81724757D18002A9E68 /* VimeoClient.swift */; };
 		7968B9452427B2D500FBBE7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968B9442427B2D500FBBE7A /* AppDelegate.swift */; };
 		7968B9472427B2D500FBBE7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968B9462427B2D500FBBE7A /* SceneDelegate.swift */; };
-		7968B9492427B2D500FBBE7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7968B9482427B2D500FBBE7A /* ViewController.swift */; };
 		7968B94C2427B2D500FBBE7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7968B94A2427B2D500FBBE7A /* Main.storyboard */; };
 		7968B94E2427B2D700FBBE7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7968B94D2427B2D700FBBE7A /* Assets.xcassets */; };
 		7968B9512427B2D700FBBE7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7968B94F2427B2D700FBBE7A /* LaunchScreen.storyboard */; };
@@ -47,12 +48,15 @@
 		797F5B7124558330001DDB77 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F5B7024558330001DDB77 /* Answer.swift */; };
 		79B007A22427BB4900D89233 /* bailarte.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 79B007A12427BB4900D89233 /* bailarte.mp4 */; };
 		79B007A52427BC5600D89233 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B007A42427BC5600D89233 /* UIViewController+Extension.swift */; };
-		79B007A82427C09800D89233 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B007A72427C09800D89233 /* RootViewController.swift */; };
 		79B1E1A6245D71A0007CC942 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B1E1A5245D71A0007CC942 /* GoogleService-Info.plist */; };
 		79B1E1A8245D8011007CC942 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B1E1A7245D8011007CC942 /* LoginViewController.swift */; };
+		79DDD30E2484F57E0085C2E2 /* SimpleAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDD30D2484F57E0085C2E2 /* SimpleAlertViewController.swift */; };
+		79DF93EC248BF6FC008A7E7B /* VimeoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DF93EB248BF6FC008A7E7B /* VimeoManager.swift */; };
+		C28B290160023813EE81F714 /* Pods_BAILArte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E4F1FD75E0431596F9F34F /* Pods_BAILArte.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40E4F1FD75E0431596F9F34F /* Pods_BAILArte.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAILArte.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7912E2952438C7C500402727 /* ClassesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassesViewController.swift; path = BAILArte/CollectionViewController/ClassesViewController.swift; sourceTree = SOURCE_ROOT; };
 		7912E2962438C7C500402727 /* ClassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassCollectionViewCell.swift; path = BAILArte/CollectionViewController/ClassCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		7912E2992438D9CC00402727 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SectionHeader.swift; path = BAILArte/CollectionViewController/SectionHeader.swift; sourceTree = SOURCE_ROOT; };
@@ -76,11 +80,12 @@
 		795CA9FF244329FB004EA7CE /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		795CAA0224435C1C004EA7CE /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = BAILArte/Entities/FirebaseManager.swift; sourceTree = SOURCE_ROOT; };
 		795CAA0624436833004EA7CE /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		7960DE2924810A73008BC296 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		7960DE2A24810A79008BC296 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		7961D81724757D18002A9E68 /* VimeoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoClient.swift; sourceTree = "<group>"; };
 		7968B9412427B2D500FBBE7A /* BAILArte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BAILArte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7968B9442427B2D500FBBE7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7968B9462427B2D500FBBE7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7968B9482427B2D500FBBE7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7968B94B2427B2D500FBBE7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7968B94D2427B2D700FBBE7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7968B9502427B2D700FBBE7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,9 +101,12 @@
 		797F5B7024558330001DDB77 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		79B007A12427BB4900D89233 /* bailarte.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bailarte.mp4; path = ../../../../Downloads/bailarte.mp4; sourceTree = "<group>"; };
 		79B007A42427BC5600D89233 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "BAILArte/UIViewController+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		79B007A72427C09800D89233 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = BAILArte/RootViewController.swift; sourceTree = SOURCE_ROOT; };
 		79B1E1A5245D71A0007CC942 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79B1E1A7245D8011007CC942 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		79DDD30D2484F57E0085C2E2 /* SimpleAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertViewController.swift; sourceTree = "<group>"; };
+		79DF93EB248BF6FC008A7E7B /* VimeoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoManager.swift; sourceTree = "<group>"; };
+		9177DC9CC636F5581BE280A2 /* Pods-BAILArte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.debug.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.debug.xcconfig"; sourceTree = "<group>"; };
+		B301F73581734B626B6D059C /* Pods-BAILArte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.release.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7942F5EE246ED4F0002223BA /* StoreKit.framework in Frameworks */,
+				C28B290160023813EE81F714 /* Pods_BAILArte.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +125,8 @@
 		4D971EFD0868646182ECC299 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				9177DC9CC636F5581BE280A2 /* Pods-BAILArte.debug.xcconfig */,
+				B301F73581734B626B6D059C /* Pods-BAILArte.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -166,7 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				795CAA0224435C1C004EA7CE /* FirebaseManager.swift */,
+				79DF93EB248BF6FC008A7E7B /* VimeoManager.swift */,
 				797CAE8624785A23009BB025 /* AlertViewController.swift */,
+				79DDD30D2484F57E0085C2E2 /* SimpleAlertViewController.swift */,
 				7961D81724757D18002A9E68 /* VimeoClient.swift */,
 				797CAE8824785FDE009BB025 /* AlertService.swift */,
 			);
@@ -176,13 +189,21 @@
 		795CAA05244366CB004EA7CE /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				7968B9482427B2D500FBBE7A /* ViewController.swift */,
 				79742F7D2469B2930057959A /* VimeoPlayerViewController.swift */,
 				7912E29B2438E61400402727 /* VideosViewController.swift */,
 				795CAA0624436833004EA7CE /* VideoTableViewCell.swift */,
 				793FAEAA2466FAF2002CA006 /* SeriesViewController.swift */,
 			);
 			path = Videos;
+			sourceTree = "<group>";
+		};
+		7960DE2824810A07008BC296 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				7960DE2A24810A79008BC296 /* Roboto-Medium.ttf */,
+				7960DE2924810A73008BC296 /* Roboto-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		7968B9382427B2D500FBBE7A = {
@@ -217,12 +238,12 @@
 				795CAA0124435B96004EA7CE /* Utils */,
 				795CA9E824422E7B004EA7CE /* Entities */,
 				79B007A32427BC3900D89233 /* Extension */,
-				79B007A62427C08700D89233 /* SideMenu */,
 				7985896C24324DD600F655BF /* Categories */,
 				791F890E243F89B300238D11 /* Contact */,
 				791F8910243F89DD00238D11 /* Feedback */,
 				7968B94D2427B2D700FBBE7A /* Assets.xcassets */,
 				79B007A12427BB4900D89233 /* bailarte.mp4 */,
+				7960DE2824810A07008BC296 /* Font */,
 				79B1E1A5245D71A0007CC942 /* GoogleService-Info.plist */,
 				7968B94A2427B2D500FBBE7A /* Main.storyboard */,
 				797E29962432238B002519E2 /* test.jpeg */,
@@ -253,18 +274,11 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		79B007A62427C08700D89233 /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				79B007A72427C09800D89233 /* RootViewController.swift */,
-			);
-			path = SideMenu;
-			sourceTree = "<group>";
-		};
 		BFC05293478AD1C2B4303624 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				7942F5ED246ED4F0002223BA /* StoreKit.framework */,
+				40E4F1FD75E0431596F9F34F /* Pods_BAILArte.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,9 +290,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7968B9552427B2D700FBBE7A /* Build configuration list for PBXNativeTarget "BAILArte" */;
 			buildPhases = (
+				C060196015F2474ADF333429 /* [CP] Check Pods Manifest.lock */,
 				7968B93D2427B2D500FBBE7A /* Sources */,
 				7968B93E2427B2D500FBBE7A /* Frameworks */,
 				7968B93F2427B2D500FBBE7A /* Resources */,
+				DBF4592FC0B25907AFB1C5E3 /* [CP] Embed Pods Frameworks */,
+				B9003E2C15565CEC5FF7D22C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,7 +344,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7960DE2C24810A79008BC296 /* Roboto-Medium.ttf in Resources */,
 				7968B9512427B2D700FBBE7A /* LaunchScreen.storyboard in Resources */,
+				7960DE2B24810A79008BC296 /* Roboto-Regular.ttf in Resources */,
 				7968B94E2427B2D700FBBE7A /* Assets.xcassets in Resources */,
 				7968B94C2427B2D500FBBE7A /* Main.storyboard in Resources */,
 				79B007A22427BB4900D89233 /* bailarte.mp4 in Resources */,
@@ -337,6 +356,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9003E2C15565CEC5FF7D22C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C060196015F2474ADF333429 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BAILArte-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBF4592FC0B25907AFB1C5E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7968B93D2427B2D500FBBE7A /* Sources */ = {
@@ -348,12 +426,10 @@
 				795CA9F42442331C004EA7CE /* Date+CurrenTimeMillis.swift in Sources */,
 				7961D81824757D18002A9E68 /* VimeoClient.swift in Sources */,
 				794EB0432440C3E800F6AFC9 /* UIColorExtension.swift in Sources */,
-				7968B9492427B2D500FBBE7A /* ViewController.swift in Sources */,
 				7968B9452427B2D500FBBE7A /* AppDelegate.swift in Sources */,
 				795CAA00244329FB004EA7CE /* Video.swift in Sources */,
 				795CAA0324435C1C004EA7CE /* FirebaseManager.swift in Sources */,
 				797CAE8924785FDE009BB025 /* AlertService.swift in Sources */,
-				79B007A82427C09800D89233 /* RootViewController.swift in Sources */,
 				7968B9472427B2D500FBBE7A /* SceneDelegate.swift in Sources */,
 				79B1E1A8245D8011007CC942 /* LoginViewController.swift in Sources */,
 				7942F5F3246EDD3E002223BA /* SubscriptionTypes.swift in Sources */,
@@ -361,8 +437,10 @@
 				79742F7E2469B2930057959A /* VimeoPlayerViewController.swift in Sources */,
 				797CAE8D2479993A009BB025 /* SubscriptionModel.swift in Sources */,
 				791F890D243F759B00238D11 /* ContactViewController.swift in Sources */,
+				79DF93EC248BF6FC008A7E7B /* VimeoManager.swift in Sources */,
 				791F8912243F89F200238D11 /* FeedbackViewController.swift in Sources */,
 				7912E29A2438D9CC00402727 /* SectionHeader.swift in Sources */,
+				79DDD30E2484F57E0085C2E2 /* SimpleAlertViewController.swift in Sources */,
 				797F5B7124558330001DDB77 /* Answer.swift in Sources */,
 				793FAEAF2466FD91002CA006 /* Series.swift in Sources */,
 				791F8914243F8A0700238D11 /* FeedbackTableViewCell.swift in Sources */,
@@ -454,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -508,7 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -520,11 +598,13 @@
 		};
 		7968B9562427B2D700FBBE7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9177DC9CC636F5581BE280A2 /* Pods-BAILArte.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BAILArte/BAILArte.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HUUN52S7BA;
 				INFOPLIST_FILE = BAILArte/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -541,11 +621,13 @@
 		};
 		7968B9572427B2D700FBBE7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B301F73581734B626B6D059C /* Pods-BAILArte.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BAILArte/BAILArte.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HUUN52S7BA;
 				INFOPLIST_FILE = BAILArte/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

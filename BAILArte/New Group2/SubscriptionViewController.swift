@@ -19,48 +19,58 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
     var iapProducts = [SKProduct]()
     
     var products: [SKProduct] = []
+    var subscriptions: [SubscriptionModel] = []
     
     @IBOutlet var purchaseBttn: UIButton!
-     @IBOutlet var restoreBttn: UIButton!
+    @IBOutlet var restoreBttn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
         SubscriptionTypes.store.requestProducts { [weak self] success, products in
-          guard let self = self else { return }
+            guard let self = self else { return }
             DispatchQueue.main.async {
-          guard success else {
-            let alertController = UIAlertController(title: "Failed to load list of products",
-                                                    message: "Check logs for details",
-                                                    preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alertController, animated: true, completion: nil)
-            return
-          }
-          self.products = products!
+                guard success else {
+                    let alertController = UIAlertController(title: "Failed to load list of products",
+                                                            message: "Check logs for details",
+                                                            preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(alertController, animated: true, completion: nil)
+                    return
+                }
+                self.products = products!
+                self.mapSubscriptionModel(with: self.products)
+                print()
             }
         }
 //        if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub) ||
 //            SubscriptionTypes.store.isProductPurchased(PoohWisdomProducts.yearlySub)){
         if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub)){
 //          displayRandomQuote()
+            displayPurchaseQuotes()
         } else {
-          displayPurchaseQuotes()
+          print("not purchased")
         }
     }
     
+    func mapSubscriptionModel(with models:[SKProduct]) {
+        for model in models {
+            let subscription = SubscriptionModel(title: model.localizedTitle, monthlyPrice: "\(model.price)", totalPrice: "\(model.price)")
+            subscriptions.append(subscription)
+            tableview.reloadData()
+        }
+    }
  
     // MARK: - Displaying Quotes
     private func displayPurchaseQuotes() {
         print("purchased quote")
-//      quoteLbl.text = "Wanna get random words of wisdom from Winnie the Pooh?\n\n" +
-//                      "Press the 'Purchase' button!\nWhat are you waiting for?!"
+
     }
 
     private func purchaseItemIndex(index: Int) {
       SubscriptionTypes.store.buyProduct(products[index]) { [weak self] success, productId in
-//        guard let self = self else { return }
+        guard let self = self else { return }
          DispatchQueue.main.async {
         guard success else {
             
@@ -68,7 +78,7 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
                                                   message: "Check logs for details",
                                                   preferredStyle: .alert)
           alertController.addAction(UIAlertAction(title: "OK", style: .default))
-            self?.present(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
             
           return
         }
@@ -78,41 +88,28 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
     }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return subscriptions.count > 0 ? subscriptions.count + 1 : subscriptions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubscriptionCell", for: indexPath) as! SubscriptionTableViewCell
-//        cell.update(with: <#T##SubscriptionModel#>)
+        cell.update(with: subscriptions[0])
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        purchaseSubscription(at: indexPath.row)
     }
     
     // MARK: - IBActions
-    @IBAction func purchaseSubscription(_ sender: Any) {
-      guard !products.isEmpty else {
-        print("Cannot purchase subscription because products is empty!")
-        return
-      }
-
-      let alertController = UIAlertController(title: "Choose your subscription",
-                                              message: "Which subscription option works best for you",
-                                              preferredStyle: .alert)
-      alertController.addAction(UIAlertAction(title: "Monthly",
-                                              style: .default,
-                                              handler: { action in
-        self.purchaseItemIndex(index: 0)
-      }))
-      alertController.addAction(UIAlertAction(title: "Yearly",
-                                              style: .default,
-                                              handler: { action in
-        self.purchaseItemIndex(index: 1)
-      }))
-      self.present(alertController, animated: true, completion: nil)
+    func purchaseSubscription(at index: Int) {
+        guard !products.isEmpty else {
+            print("Cannot purchase subscription because products is empty!")
+            return
+        }
+        
+        self.purchaseItemIndex(index: index)
     }
 
     @IBAction func restorePurchases(_ sender: Any) {

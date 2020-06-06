@@ -31,7 +31,8 @@ class FeedbackTableViewCell: UITableViewCell, UITextViewDelegate {
         // Configure the view for the selected state
     }
     
-    func update(with question: String, at index: Int) {
+    func update(with question: String, clearTextField: Bool, at index: Int) {
+        answerTextView.text = clearTextField ? "" : answerTextView.text
         questionLabel.text = question
         currentIndex = index
     }

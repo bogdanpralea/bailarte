@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PlayerKit
+//import PlayerKit
 import AVFoundation
 import VimeoNetworking
 import WebKit
@@ -29,7 +29,7 @@ class VimeoPlayerViewController: UIViewController {
     
     private var accountObservationToken: ObservationToken?
     
-    private let player = RegularPlayer()
+//    private let player = RegularPlayer()
     @IBOutlet weak var playerView: UIView!
     
     override func viewDidLoad() {
@@ -69,9 +69,9 @@ class VimeoPlayerViewController: UIViewController {
     
     private func addPlayerToView() {
 //        player.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        player.view.frame = playerView.bounds
-//        self.view.insertSubview(player.view, at: 0)
-        playerView.addSubview(player.view)
+//        player.view.frame = playerView.bounds
+////        self.view.insertSubview(player.view, at: 0)
+//        playerView.addSubview(player.view)
 //        player.play()
         
     }
@@ -169,7 +169,7 @@ class VimeoPlayerViewController: UIViewController {
     
     @IBAction func play(_ sender: UIButton) {
         print("play")
-        player.play()
+//        player.play()
     }
 
 }

@@ -15,4 +15,5 @@ public struct Video: Codable {
     var level: String
     var url: String?
     var series: String
+    var thumbnail: String?
 }

@@ -22,20 +22,20 @@ public extension Date {
         self.init(millisSince1970: millisSince1970)
     }
     
-    /// Returns the number of millis that have been passed since 1970
-    var currentTimeMillis: Int64 {
-        return Int64(self.timeIntervalSince1970 * 1000)
-    }
+//    /// Returns the number of millis that have been passed since 1970
+//    var currentTimeMillis: Int64 {
+//        return Int64(self.timeIntervalSince1970 * 1000)
+//    }
 }
 
-public extension Int64 {
-    func toDate() -> Date? {
-        return Date(millisSince1970: self)
-    }
-}
-
-public extension TimeInterval {
-    func toMilliseconds() -> Int {
-        return Int(self * 1000)
-    }
-}
+//public extension Int64 {
+//    func toDate() -> Date? {
+//        return Date(millisSince1970: self)
+//    }
+//}
+//
+//public extension TimeInterval {
+//    func toMilliseconds() -> Int {
+//        return Int(self * 1000)
+//    }
+//}

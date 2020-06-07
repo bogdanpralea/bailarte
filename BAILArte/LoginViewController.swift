@@ -27,37 +27,49 @@ class LoginViewController: UIViewController {
                 
             // get the login status of Apple sign in for the app
                // asynchronous
-               ASAuthorizationAppleIDProvider().getCredentialState(forUserID: userID, completion: {
-                   credentialState, error in
-
-                   switch(credentialState){
-                   case .authorized:
-                       print("user remain logged in, proceed to another view")
-                       self.goToHome()
-                   case .revoked:
-                       print("user logged in before but revoked")
-                   case .notFound:
-                       print("user haven't log in before")
-                   default:
-                       print("unknown state")
-                   }
-               })
+            if #available(iOS 13.0, *) {
+                ASAuthorizationAppleIDProvider().getCredentialState(forUserID: userID, completion: {
+                    credentialState, error in
+                    
+                    switch(credentialState){
+                    case .authorized:
+                        print("user remain logged in, proceed to another view")
+                        self.goToHome()
+                    case .revoked:
+                        print("user logged in before but revoked")
+                    case .notFound:
+                        print("user haven't log in before")
+                    default:
+                        print("unknown state")
+                    }
+                })
+            } else {
+                // Fallback on earlier versions
+            }
         }
                 
       
-        let siwaButton = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
-        siwaButton.translatesAutoresizingMaskIntoConstraints = false
-        appleView.addSubview(siwaButton)
-        
-        NSLayoutConstraint.activate([
-            siwaButton.leadingAnchor.constraint(equalTo: appleView.leadingAnchor, constant: 0),
-            siwaButton.trailingAnchor.constraint(equalTo: appleView.trailingAnchor, constant: 0),
-            siwaButton.bottomAnchor.constraint(equalTo: appleView.bottomAnchor, constant: 0),
-            siwaButton.topAnchor.constraint(equalTo: appleView.topAnchor, constant: 0)
-           ])
-        
-        siwaButton.addTarget(self, action: #selector(appleSignInTapped), for: .touchUpInside)
+        if #available(iOS 13.0, *) {
+            let siwaButton = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
+            
+            siwaButton.translatesAutoresizingMaskIntoConstraints = false
+                   appleView.addSubview(siwaButton)
+                   
+                   NSLayoutConstraint.activate([
+                       siwaButton.leadingAnchor.constraint(equalTo: appleView.leadingAnchor, constant: 0),
+                       siwaButton.trailingAnchor.constraint(equalTo: appleView.trailingAnchor, constant: 0),
+                       siwaButton.bottomAnchor.constraint(equalTo: appleView.bottomAnchor, constant: 0),
+                       siwaButton.topAnchor.constraint(equalTo: appleView.topAnchor, constant: 0)
+                      ])
+                   
 
+                       siwaButton.addTarget(self, action: #selector(appleSignInTapped), for: .touchUpInside)
+                  
+
+        } else {
+            // Fallback on earlier versions
+        }
+       
 //        let authUI = FUIAuth.defaultAuthUI()
 //        // You need to adopt a FUIAuthDelegate protocol to receive callback
 //        authUI.delegate = self
@@ -75,13 +87,21 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Register to Apple ID credential revoke notification
-        NotificationCenter.default.addObserver(self, selector: #selector(appleIDStateDidRevoked(_:)), name: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil)
+        if #available(iOS 13.0, *) {
+            NotificationCenter.default.addObserver(self, selector: #selector(appleIDStateDidRevoked(_:)), name: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil)
+        if #available(iOS 13.0, *) {
+            NotificationCenter.default.removeObserver(self, name: ASAuthorizationAppleIDProvider.credentialRevokedNotification, object: nil)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     @objc func appleIDStateDidRevoked(_ notification: Notification) {
@@ -96,6 +116,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @available(iOS 13.0, *)
     func putThisInAppDelegateIfNeeded() {
         // Retrieve user ID saved in UserDefaults
         if let userID = UserDefaults.standard.string(forKey: "appleAuthorizedUserIdKey") {
@@ -145,6 +166,7 @@ class LoginViewController: UIViewController {
         goToHome()
     }
     
+    @available(iOS 13, *)
     @objc func appleSignInTapped() {
         startSignInWithAppleFlow()
     }
@@ -157,12 +179,14 @@ class LoginViewController: UIViewController {
 
 
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    @available(iOS 13.0, *)
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
     }
 }
 
 extension LoginViewController : ASAuthorizationControllerDelegate {
+    @available(iOS 13.0, *)
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         print("authorization error")
         guard let error = error as? ASAuthorizationError else {
@@ -190,6 +214,7 @@ extension LoginViewController : ASAuthorizationControllerDelegate {
         }
     }
     
+    @available(iOS 13.0, *)
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         
         if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {

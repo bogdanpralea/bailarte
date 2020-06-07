@@ -12,8 +12,9 @@ import StoreKit
 class SubscriptionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var noInternetView: UIView!
+    @IBOutlet weak var noInternetStackView: UIStackView!
     
-    var productIdentifier = "one.month.test" //Get it from iTunes connect
     var productID = ""
     var productsRequest = SKProductsRequest()
     var iapProducts = [SKProduct]()
@@ -27,7 +28,7 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        SubscriptionTypes.store.restorePurchases()
         SubscriptionTypes.store.requestProducts { [weak self] success, products in
             guard let self = self else { return }
             DispatchQueue.main.async {
@@ -48,13 +49,24 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
 //            SubscriptionTypes.store.isProductPurchased(PoohWisdomProducts.yearlySub)){
         if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub)){
 //          displayRandomQuote()
-            displayPurchaseQuotes()
+            print("purchased")
         } else {
           print("not purchased")
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if !RequestManager.shared.noInternet {
+            noInternetView.isHidden = true
+            noInternetStackView.isHidden = true 
+        }
+        
+    }
+    
     func mapSubscriptionModel(with models:[SKProduct]) {
+        subscriptions.removeAll()
         for model in models {
             let subscription = SubscriptionModel(title: model.localizedTitle, monthlyPrice: "\(model.price)", totalPrice: "\(model.price)")
             subscriptions.append(subscription)
@@ -62,38 +74,15 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
  
-    // MARK: - Displaying Quotes
-    private func displayPurchaseQuotes() {
-        print("purchased quote")
 
-    }
-
-    private func purchaseItemIndex(index: Int) {
-      SubscriptionTypes.store.buyProduct(products[index]) { [weak self] success, productId in
-        guard let self = self else { return }
-         DispatchQueue.main.async {
-        guard success else {
-            
-          let alertController = UIAlertController(title: "Failed to purchase product",
-                                                  message: "Check logs for details",
-                                                  preferredStyle: .alert)
-          alertController.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alertController, animated: true, completion: nil)
-            
-          return
-        }
-//        self?.displayRandomQuote()
-        }
-      }
-    }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subscriptions.count > 0 ? subscriptions.count + 1 : subscriptions.count
+        return  subscriptions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubscriptionCell", for: indexPath) as! SubscriptionTableViewCell
-        cell.update(with: subscriptions[0])
+        cell.update(with: subscriptions[indexPath.row])
         
         return cell
     }
@@ -110,6 +99,25 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
         }
         
         self.purchaseItemIndex(index: index)
+    }
+    
+    private func purchaseItemIndex(index: Int) {
+        SubscriptionTypes.store.buyProduct(products[index]) { [weak self] success, productId in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                guard success else {
+                    
+                    let alertController = UIAlertController(title: "Failed to purchase product",
+                                                            message: "Check logs for details",
+                                                            preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    return
+                }
+                //        self?.displayRandomQuote()
+            }
+        }
     }
 
     @IBAction func restorePurchases(_ sender: Any) {

@@ -32,20 +32,28 @@ class VideoTableViewCell: UITableViewCell {
         levelLabel.text = video.level
         
         thumbnailImageView.layer.borderColor = UIColor(hexString: "7B72DE").cgColor
-        if let url = video.thumbnail {
-
-                // just not to cause a deadlock in UI!
-            DispatchQueue.global().async {
-                guard let imageData = try? Data(contentsOf: URL(string: url)!) else { return }
-
-                let image = UIImage(data: imageData)
-                DispatchQueue.main.async {
-                    self.thumbnailImageView.image = image
-                }
-            }
+        if let url = video.thumbnail  {
+            getThumbnail(for: url)
+        }
+        else if SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub) {
+            print("purchased")
         }
         else {
+            
             thumbnailImageView.image = UIImage(named: "lock.pdf")
+            
+        }
+    }
+
+    func getThumbnail(for urlString: String) {
+        // just not to cause a deadlock in UI!
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: URL(string: urlString)!) else { return }
+
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                self.thumbnailImageView.image = image
+            }
         }
     }
     

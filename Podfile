@@ -23,6 +23,7 @@ target 'BAILArte' do
   
   pod 'Google-Mobile-Ads-SDK'
   pod 'TPKeyboardAvoidingSwift'
+  pod 'ReachabilitySwift'
   
 #  pod 'youtube-ios-player-helper'
 #  pod 'YoutubePlayer-in-WKWebView'

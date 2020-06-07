@@ -50,13 +50,16 @@
 		79B007A52427BC5600D89233 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B007A42427BC5600D89233 /* UIViewController+Extension.swift */; };
 		79B1E1A6245D71A0007CC942 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B1E1A5245D71A0007CC942 /* GoogleService-Info.plist */; };
 		79B1E1A8245D8011007CC942 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B1E1A7245D8011007CC942 /* LoginViewController.swift */; };
+		79D50629248CC4F600ED6609 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D50628248CC4F600ED6609 /* RequestManager.swift */; };
 		79DDD30E2484F57E0085C2E2 /* SimpleAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDD30D2484F57E0085C2E2 /* SimpleAlertViewController.swift */; };
 		79DF93EC248BF6FC008A7E7B /* VimeoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DF93EB248BF6FC008A7E7B /* VimeoManager.swift */; };
-		C28B290160023813EE81F714 /* Pods_BAILArte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E4F1FD75E0431596F9F34F /* Pods_BAILArte.framework */; };
+		D0F4B6E8239B4DD72FD712C3 /* Pods_BAILArte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318A6CF5A3F4B9DE9FF5D1D4 /* Pods_BAILArte.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		40E4F1FD75E0431596F9F34F /* Pods_BAILArte.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAILArte.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F85D669BD07B867B2142D31 /* Pods-BAILArte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.release.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.release.xcconfig"; sourceTree = "<group>"; };
+		318A6CF5A3F4B9DE9FF5D1D4 /* Pods_BAILArte.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BAILArte.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78AF28A039FEEF48E7385040 /* Pods-BAILArte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.debug.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.debug.xcconfig"; sourceTree = "<group>"; };
 		7912E2952438C7C500402727 /* ClassesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassesViewController.swift; path = BAILArte/CollectionViewController/ClassesViewController.swift; sourceTree = SOURCE_ROOT; };
 		7912E2962438C7C500402727 /* ClassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClassCollectionViewCell.swift; path = BAILArte/CollectionViewController/ClassCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		7912E2992438D9CC00402727 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SectionHeader.swift; path = BAILArte/CollectionViewController/SectionHeader.swift; sourceTree = SOURCE_ROOT; };
@@ -103,10 +106,9 @@
 		79B007A42427BC5600D89233 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "BAILArte/UIViewController+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		79B1E1A5245D71A0007CC942 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79B1E1A7245D8011007CC942 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		79D50628248CC4F600ED6609 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		79DDD30D2484F57E0085C2E2 /* SimpleAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertViewController.swift; sourceTree = "<group>"; };
 		79DF93EB248BF6FC008A7E7B /* VimeoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoManager.swift; sourceTree = "<group>"; };
-		9177DC9CC636F5581BE280A2 /* Pods-BAILArte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.debug.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.debug.xcconfig"; sourceTree = "<group>"; };
-		B301F73581734B626B6D059C /* Pods-BAILArte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BAILArte.release.xcconfig"; path = "Target Support Files/Pods-BAILArte/Pods-BAILArte.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7942F5EE246ED4F0002223BA /* StoreKit.framework in Frameworks */,
-				C28B290160023813EE81F714 /* Pods_BAILArte.framework in Frameworks */,
+				D0F4B6E8239B4DD72FD712C3 /* Pods_BAILArte.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +127,8 @@
 		4D971EFD0868646182ECC299 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9177DC9CC636F5581BE280A2 /* Pods-BAILArte.debug.xcconfig */,
-				B301F73581734B626B6D059C /* Pods-BAILArte.release.xcconfig */,
+				78AF28A039FEEF48E7385040 /* Pods-BAILArte.debug.xcconfig */,
+				2F85D669BD07B867B2142D31 /* Pods-BAILArte.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				795CAA0224435C1C004EA7CE /* FirebaseManager.swift */,
+				79D50628248CC4F600ED6609 /* RequestManager.swift */,
 				79DF93EB248BF6FC008A7E7B /* VimeoManager.swift */,
 				797CAE8624785A23009BB025 /* AlertViewController.swift */,
 				79DDD30D2484F57E0085C2E2 /* SimpleAlertViewController.swift */,
@@ -209,6 +212,7 @@
 		7968B9382427B2D500FBBE7A = {
 			isa = PBXGroup;
 			children = (
+				7974AE7F245B299A006DFE05 /* BAILArte.entitlements */,
 				7968B9432427B2D500FBBE7A /* BAILArte */,
 				7968B9422427B2D500FBBE7A /* Products */,
 				4D971EFD0868646182ECC299 /* Pods */,
@@ -227,7 +231,6 @@
 		7968B9432427B2D500FBBE7A /* BAILArte */ = {
 			isa = PBXGroup;
 			children = (
-				7974AE7F245B299A006DFE05 /* BAILArte.entitlements */,
 				7968B9442427B2D500FBBE7A /* AppDelegate.swift */,
 				7968B9462427B2D500FBBE7A /* SceneDelegate.swift */,
 				7968B95C2427B88800FBBE7A /* SplashViewController.swift */,
@@ -278,7 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				7942F5ED246ED4F0002223BA /* StoreKit.framework */,
-				40E4F1FD75E0431596F9F34F /* Pods_BAILArte.framework */,
+				318A6CF5A3F4B9DE9FF5D1D4 /* Pods_BAILArte.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -290,12 +293,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7968B9552427B2D700FBBE7A /* Build configuration list for PBXNativeTarget "BAILArte" */;
 			buildPhases = (
-				C060196015F2474ADF333429 /* [CP] Check Pods Manifest.lock */,
+				DD5B1B51413FA22946DFF8D1 /* [CP] Check Pods Manifest.lock */,
 				7968B93D2427B2D500FBBE7A /* Sources */,
 				7968B93E2427B2D500FBBE7A /* Frameworks */,
 				7968B93F2427B2D500FBBE7A /* Resources */,
-				DBF4592FC0B25907AFB1C5E3 /* [CP] Embed Pods Frameworks */,
-				B9003E2C15565CEC5FF7D22C /* [CP] Copy Pods Resources */,
+				62702E0D069A0961485CFFDD /* [CP] Embed Pods Frameworks */,
+				C048615BDC11694586F9F975 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,7 +361,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B9003E2C15565CEC5FF7D22C /* [CP] Copy Pods Resources */ = {
+		62702E0D069A0961485CFFDD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C048615BDC11694586F9F975 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,7 +395,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C060196015F2474ADF333429 /* [CP] Check Pods Manifest.lock */ = {
+		DD5B1B51413FA22946DFF8D1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,23 +417,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DBF4592FC0B25907AFB1C5E3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BAILArte/Pods-BAILArte-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -421,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D50629248CC4F600ED6609 /* RequestManager.swift in Sources */,
 				7942F5F5246EDD8B002223BA /* IAPManager.swift in Sources */,
 				7912E29C2438E61400402727 /* VideosViewController.swift in Sources */,
 				795CA9F42442331C004EA7CE /* Date+CurrenTimeMillis.swift in Sources */,
@@ -532,7 +536,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -586,7 +590,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -598,13 +602,13 @@
 		};
 		7968B9562427B2D700FBBE7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9177DC9CC636F5581BE280A2 /* Pods-BAILArte.debug.xcconfig */;
+			baseConfigurationReference = 78AF28A039FEEF48E7385040 /* Pods-BAILArte.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BAILArte/BAILArte.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = HUUN52S7BA;
 				INFOPLIST_FILE = BAILArte/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -621,13 +625,13 @@
 		};
 		7968B9572427B2D700FBBE7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B301F73581734B626B6D059C /* Pods-BAILArte.release.xcconfig */;
+			baseConfigurationReference = 2F85D669BD07B867B2142D31 /* Pods-BAILArte.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BAILArte/BAILArte.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = HUUN52S7BA;
 				INFOPLIST_FILE = BAILArte/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -636,7 +640,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bogdanpralea.Bailarte;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Bailarte Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Bailarte Distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

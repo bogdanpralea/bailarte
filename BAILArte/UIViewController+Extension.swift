@@ -12,7 +12,13 @@ extension UIViewController {
 
     func present(storyBoardName: String, controllerId: String) {
         let storyboard = UIStoryboard(name: storyBoardName, bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: controllerId)
+        var controller: UIViewController
+        if #available(iOS 13.0, *) {
+             controller = storyboard.instantiateViewController(identifier: controllerId)
+        } else {
+            // Fallback on earlier versions
+             controller = storyboard.instantiateViewController(withIdentifier: controllerId)
+        }
         controller.modalPresentationStyle = .fullScreen
 //        let nav = UINavigationController(rootViewController: controller)
 //        nav.modalPresentationStyle = .fullScreen

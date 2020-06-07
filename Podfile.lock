@@ -363,6 +363,7 @@ PODS:
   - nanopb/encode (1.30905.0)
   - PromisesObjC (1.2.8)
   - Protobuf (3.11.4)
+  - ReachabilitySwift (5.0.0)
   - TPKeyboardAvoidingSwift (3.2)
   - VimeoNetworking (4.1.0)
 
@@ -373,6 +374,7 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FirebaseUI/OAuth
   - Google-Mobile-Ads-SDK
+  - ReachabilitySwift
   - TPKeyboardAvoidingSwift
   - VimeoNetworking
 
@@ -406,6 +408,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
+    - ReachabilitySwift
     - TPKeyboardAvoidingSwift
     - VimeoNetworking
 
@@ -438,9 +441,10 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   TPKeyboardAvoidingSwift: ce1a75e0bc3af6b485f8bfa1d0a8320cfc565851
   VimeoNetworking: faca97d7b158a74d96afb460011e2dc69651c051
 
-PODFILE CHECKSUM: df7ac2367c55d4d55d3b5cb437ce1bbe778a3cc3
+PODFILE CHECKSUM: 896ed8044fdee353336dd9cb8453e8058365b9da
 
 COCOAPODS: 1.8.4

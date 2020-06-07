@@ -12,10 +12,22 @@ import FirebaseFirestore
 
 class HomeTabBarController: UITabBarController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setTabBarColor()
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appBecameActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+
+    @objc func appBecameActive() {
+//        if RequestManager.shared.noInternet {
+//            RequestManager.shared.startRequests()
+//        }
+        print("App moved to active!")
     }
     
     override func viewWillAppear(_ animated: Bool) {

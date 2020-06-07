@@ -13,6 +13,8 @@ import FirebaseFirestore
 
 class FeedbackViewController: UIViewController, UITableViewDataSource, FeedbackTableViewCellDelegate {
     @IBOutlet private var tableView: TPKeyboardAvoidingTableView!
+    @IBOutlet weak var noInternetView: UIView!
+    @IBOutlet weak var noInternetStackView: UIStackView!
     
     private var questionsArray = [String]()
     private var answersArray = [Answer]()
@@ -25,8 +27,21 @@ class FeedbackViewController: UIViewController, UITableViewDataSource, FeedbackT
         
         // Do any additional setup after loading the view.
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if !RequestManager.shared.noInternet {
+            noInternetView.isHidden = true
+            noInternetStackView.isHidden = true
+            
+            createEmptyAnswersArray()
+        }
+        else {
+            
+        }
         
-        createEmptyAnswersArray()
     }
     
     func createEmptyAnswersArray() {

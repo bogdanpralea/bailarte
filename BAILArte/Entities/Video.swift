@@ -16,4 +16,5 @@ public struct Video: Codable {
     var url: String?
     var series: String
     var thumbnail: String?
+    var vimeoLink: String?
 }

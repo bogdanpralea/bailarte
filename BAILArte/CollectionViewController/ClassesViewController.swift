@@ -11,28 +11,26 @@ import UIKit
 class ClassesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var classesCollectionView: UICollectionView!
+    @IBOutlet weak var noInternetView: UIView!
     
     var categories = [Category]()
     var categoriesNumberOfVideos = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        navigationController?.navigationBar.isHidden = true
-        
-        categories = FirebaseManager.shared.getCategories()
-        categoriesNumberOfVideos = FirebaseManager.shared.categoriesNumberOfVideos
-        classesCollectionView.reloadData()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //
-        ////        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        ////        self.navigationController?.navigationBar.shadowImage = UIImage()
-        ////        self.navigationController?.navigationBar.isTranslucent = true
-        ////        self.navigationController?.view.backgroundColor = UIColor.clear
-        //
+
+        if !RequestManager.shared.noInternet {
+            noInternetView.isHidden = true
+            categories = FirebaseManager.shared.getCategories()
+            categoriesNumberOfVideos = FirebaseManager.shared.categoriesNumberOfVideos
+            classesCollectionView.reloadData()
+        }
+        
         navigationController?.navigationBar.isHidden = true
     }
     

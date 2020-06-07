@@ -12,22 +12,22 @@ import UserNotifications
 import VimeoNetworking
 //import FBSDKCoreKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let gcmMessageIDKey = "gcm.message_id"
+    var window: UIWindow?
     
-    var myOrientation: UIInterfaceOrientationMask = .portrait
-    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return myOrientation
-    }
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 //        ApplicationDelegate.shared.application(
 //            application,
 //            didFinishLaunchingWithOptions: launchOptions
 //        )
+
+        
         let attrs = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)
@@ -38,9 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backgroundColor = UIColor(hexString: "212132")
        
 //        vimeoAuthentication()
-        VimeoManager.shared.vimeoAuthentication()
-        FirebaseApp.configure()
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
+//        if RequestManager.shared.isInternet() {
+            print("start request")
+//        FirebaseApp.configure()
+//        RequestManager.shared.startMonitorInternetConnection()
+            RequestManager.shared.startRequests()
+//        }
+//        VimeoManager.shared.vimeoAuthentication()
+//        FirebaseApp.configure()
+//        GADMobileAds.sharedInstance().start(completionHandler: nil)
 
         Messaging.messaging().delegate = self
         
@@ -62,6 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         
@@ -99,72 +106,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
-    func vimeoAuthentication() {
-        let authenticationController = AuthenticationController(client: VimeoClient.defaultClient, appConfiguration: AppConfiguration.defaultConfiguration, configureSessionManagerBlock: nil)
-        authenticationController.accessToken(token: VimeoClient.accessToken) { result in
-            switch result
-            {
-            case .success(let account):
-                print("authenticated successfully: \(account)")
-                
-            case .failure(let error):
-                print("failure authenticating: \(error)")
-            }
-        }
-    }
-    
-//    func vimeoAuth() {
-//        // Starting the authentication process
-//
-//        let authenticationController = AuthenticationController(client: VimeoClient.defaultClient, appConfiguration: AppConfiguration.defaultConfiguration, configureSessionManagerBlock: nil)
-//
-//        // First, we try to load a preexisting account
-//
-//        let loadedAccount: VIMAccount?
-//        do
-//        {
-//            loadedAccount = try authenticationController.loadUserAccount()
-//            print("content:\(loadedAccount)")
-//        }
-//        catch let error
-//        {
-//            loadedAccount = nil
-//            print("error loading account \(error)")
-//        }
-//
-//        // If we didn't find an account to load or loading failed, we'll authenticate using client credentials
-//
-//        if loadedAccount == nil
-//        {
-//            authenticationController.clientCredentialsGrant { result in
-//
-//                switch result
-//                {
-//                case .success(let account):
-//                    print("authenticated successfully: \(account)")
-//                case .failure(let error):
-//                    print("failure authenticating: \(error)")
-//
-//                    let title = "Client Credentials Authentication Failed"
-//                    let message = "Make sure that your client identifier and client secret are set correctly in VimeoClient+Shared.swift"
-//
-////                    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-////                    splitViewController.present(alert, animated: true, completion: nil)
-//                    print(title + ": " + message)
-//                }
-//            }
-//        }
-//    }
 
     // MARK: UISceneSession Lifecycle
 
+    @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
+    @available(iOS 13.0, *)
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.

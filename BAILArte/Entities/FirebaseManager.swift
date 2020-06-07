@@ -21,6 +21,32 @@ class FirebaseManager {
     
     private init() {}
     
+    func getData() {
+        let db = Firestore.firestore()
+        let ref = db.collection("app").document("uGSYD14i9ZY90e5QkM3f")
+        ref.getDocument { (snapshot, error) in
+            let result = Result {
+                try snapshot.flatMap {
+                    try $0.data(as: MainModel.self)
+                }
+            }
+            switch result {
+            case .success(let mainModel):
+                if let model = mainModel {
+                    self.allVideos = model.videos
+                    self.feedback = model.feedback
+                    self.categories = model.categories
+                    self.series = model.series
+                    self.setCategoriesNumberOfVideos()
+                } else {
+                    print("Document does not exist")
+                }
+            case .failure(let error):
+                print("Error decoding main model: \(error)")
+            }
+        }
+    }
+    
     func getAllVideos() -> [Video] {
         return allVideos
     }

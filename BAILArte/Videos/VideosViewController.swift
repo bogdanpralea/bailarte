@@ -57,13 +57,19 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print("Ad wasn't ready")
                 goToSelectedVideo()
             }
+            
         }
         else {
-            let alert = alertservice.alert() { [weak self] in
-                self?.tabBarController?.selectedIndex = 3
+            if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub)) {
+                goToSelectedVideo()
             }
-            
-            present(alert, animated: true)
+            else {
+                let alert = alertservice.alert() { [weak self] in
+                    self?.tabBarController?.selectedIndex = 3
+                }
+                
+                present(alert, animated: true)
+            }
         }
     }
 
@@ -75,33 +81,8 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func goToSelectedVideo() {
         if let index = tableView.indexPathsForSelectedRows?.first {
-            if let urlString = videos[index.row].url {
-                getVideoFromVimeo(for: urlString)
-            }
-        }
-    }
-    
-    
-    func getVideoFromVimeo(for urlString: String) {
-//        let videoRequest = Request<VIMVideo>(path: "/videos/\(urlString)")
-        let videoRequest = Request<[VIMVideo]>(path: "/me/videos")
-        let _ = VimeoClient.defaultClient.request(videoRequest) { result in
-            switch result {
-            case .success(let response):
-                
-                let videos = response.model
-                print("")
-//                let video: VIMVideo =
-//                let video: VIMVideo = response.model
-//                if let file = video.files?.last as? VIMVideoFile {
-//
-//                    if let urlString = file.link {
-//                        self.playVideo(from: urlString)
-//                    }
-////                    if let thumbnailUrlString = video.pictureCollection?.pictures?.first
-//                }
-            case .failure(let error):
-                print("error retrieving video: \(error)")
+            if let urlString = videos[index.row].vimeoLink {
+                playVideo(from: urlString)
             }
         }
     }

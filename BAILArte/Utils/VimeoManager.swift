@@ -20,10 +20,14 @@ class VimeoManager: NSObject {
             switch result
             {
             case .success(let account):
+                 RequestManager.shared.noInternet = false 
                 print("authenticated successfully: \(account)")
                 self.getVideoFromVimeo()
                 
             case .failure(let error):
+                if error.code == -1009 {
+                    RequestManager.shared.noInternet = true
+                }
                 print("failure authenticating: \(error)")
             }
         }
@@ -54,8 +58,7 @@ class VimeoManager: NSObject {
 //                                        if let urlString = file.link {
 //                                            self.playVideo(from: urlString)
 //                                        }
-                    ////                    if let thumbnailUrlString = video.pictureCollection?.pictures?.first
-                //                }
+
                 case .failure(let error):
                     print("error retrieving video: \(error)")
                 }
@@ -64,19 +67,19 @@ class VimeoManager: NSObject {
     }
     
     func setVideosThumbnails(vimeoVideos: [VIMVideo]) {
-        //        let links = Set<String>(vimeoVideos.)
         let videos = FirebaseManager.shared.getAllVideos()
         
         for i in 0...videos.count - 1 {
             if let url = videos[i].url {
                 if let vimeoIndex = vimeoVideos.firstIndex(where: {($0.link?.contains(url) ?? false)}) {
                     let video = vimeoVideos[vimeoIndex]
-//                    if let file = video.files?.last as? VIMVideoFile {
-                        
+                    if let file = video.files?.last as? VIMVideoFile, let urlString = file.link {
+                        FirebaseManager.shared.allVideos[i].vimeoLink = urlString
+                    }
+                    
                     if let vimPicture = video.pictureCollection?.pictures?.last as? VIMPicture, let thumbnailUrlString = vimPicture.link {
                         FirebaseManager.shared.allVideos[i].thumbnail = thumbnailUrlString
-                        }
-//                    }
+                    }
                 }
             }
         }

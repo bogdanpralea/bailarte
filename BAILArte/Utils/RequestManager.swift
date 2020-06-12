@@ -17,7 +17,7 @@ class RequestManager {
     static let shared = RequestManager()
     
     var noInternet = false
-    let monitor = NWPathMonitor()
+//    let monitor = NWPathMonitor()
     var firebaseConfigured = false
     
 //    func isInternet() -> Bool {
@@ -52,6 +52,11 @@ class RequestManager {
 //                print("We're connected!")
 //                self.noInternet = false
 //
+        IAPManager.shared.refreshSubscriptionsStatus(callback: {
+            IAPManager.shared.subscriptionActiv = true
+        }) { (error) in
+            IAPManager.shared.subscriptionActiv = false
+        }
                 if !self.firebaseConfigured {
                     FirebaseApp.configure()
                     self.firebaseConfigured = true

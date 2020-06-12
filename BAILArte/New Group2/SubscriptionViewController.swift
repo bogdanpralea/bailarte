@@ -28,31 +28,48 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        SubscriptionTypes.store.restorePurchases()
-        SubscriptionTypes.store.requestProducts { [weak self] success, products in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                guard success else {
-                    let alertController = UIAlertController(title: "Failed to load list of products",
-                                                            message: "Check logs for details",
-                                                            preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
-                    self.present(alertController, animated: true, completion: nil)
-                    return
-                }
-                self.products = products!
-                self.mapSubscriptionModel(with: self.products)
-                print()
-            }
-        }
-//        if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub) ||
-//            SubscriptionTypes.store.isProductPurchased(PoohWisdomProducts.yearlySub)){
-        if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub)){
-//          displayRandomQuote()
-            print("purchased")
-        } else {
-          print("not purchased")
-        }
+        
+        IAPManager.shared.startWith(arrayOfIds: SubscriptionTypes.productIDs)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: IAP_PRODUCTS_DID_LOAD_NOTIFICATION, object: nil)
+//        IAPManager.shared.loadProducts {  [weak self] success, products in
+//            guard let self = self else { return }
+//            DispatchQueue.main.async {
+//                guard success else {
+//                    let alertController = UIAlertController(title: "Failed to load list of products",
+//                                                            message: "Check logs for details",
+//                                                            preferredStyle: .alert)
+//                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
+//                    self.present(alertController, animated: true, completion: nil)
+//                    return
+//                }
+//                self.products = products!
+//                self.mapSubscriptionModel(with: self.products)
+//                print()
+//            }
+//        }
+//        SubscriptionTypes.store.requestProducts { [weak self] success, products in
+//            guard let self = self else { return }
+//            DispatchQueue.main.async {
+//                guard success else {
+//                    let alertController = UIAlertController(title: "Failed to load list of products",
+//                                                            message: "Check logs for details",
+//                                                            preferredStyle: .alert)
+//                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
+//                    self.present(alertController, animated: true, completion: nil)
+//                    return
+//                }
+//                self.products = products!
+//                self.mapSubscriptionModel(with: self.products)
+//                print()
+//            }
+//        }
+//
+//        if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.weeklySub) || SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub) || SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.threeMonthSub) || SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.yearlySub)){
+////          displayRandomQuote()
+//            print("purchased")
+//        } else {
+//          print("not purchased")
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +81,15 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
         }
         
     }
+    
+    @objc func loadData() {
+        if let products = IAPManager.shared.products {
+            self.products = products
+            mapSubscriptionModel(with: products)
+            tableview.reloadData()
+        }
+    }
+    
     
     func mapSubscriptionModel(with models:[SKProduct]) {
         subscriptions.removeAll()
@@ -102,25 +128,41 @@ class SubscriptionViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     private func purchaseItemIndex(index: Int) {
-        SubscriptionTypes.store.buyProduct(products[index]) { [weak self] success, productId in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                guard success else {
-                    
-                    let alertController = UIAlertController(title: "Failed to purchase product",
-                                                            message: "Check logs for details",
-                                                            preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                    return
-                }
-                //        self?.displayRandomQuote()
-            }
+        IAPManager.shared.purchaseProduct(product: products[index], success: {
+            print("succes")
+        }) { (error) in
+//            let alertController = UIAlertController(title: "Error",
+//                                                    message: error?.localizedDescription,
+//                                                    preferredStyle: .alert)
+//            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+//            self.present(alertController, animated: true, completion: nil)
         }
+        
+//        SubscriptionTypes.store.buyProduct(products[index]) { [weak self] success, productId in
+//            guard let self = self else { return }
+//            DispatchQueue.main.async {
+//                guard success else {
+//                    
+//                    let alertController = UIAlertController(title: "Failed to purchase product",
+//                                                            message: "Check logs for details",
+//                                                            preferredStyle: .alert)
+//                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
+//                    self.present(alertController, animated: true, completion: nil)
+//                    
+//                    return
+//                }
+//                //        self?.displayRandomQuote()
+//            }
+//        }
     }
 
     @IBAction func restorePurchases(_ sender: Any) {
-      SubscriptionTypes.store.restorePurchases()
+//      SubscriptionTypes.store.restorePurchases()
+        IAPManager.shared.restorePurchases(success: {
+            print("resttore")
+            IAPManager.shared.subscriptionActiv = true 
+        }) { (error) in
+            print(error?.localizedDescription)
+        }
     }
 }

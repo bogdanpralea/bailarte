@@ -17,60 +17,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="Y0q-9p-HSx">
-            <objects>
-                <viewController storyboardIdentifier="RootVCId" id="9bQ-dl-Iy2" customClass="RootViewController" customModule="BAILArte" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xK4-hf-ldw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xDq-V1-rGA">
-                                <rect key="frame" x="20" y="104" width="335" height="494"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="zpd-sS-VlP">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zpd-sS-VlP" id="9ET-7A-oSg">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="9bQ-dl-Iy2" id="jzf-gg-Lj2"/>
-                                    <outlet property="delegate" destination="9bQ-dl-Iy2" id="GCg-yH-pjv"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAILArte Dance School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlm-Y2-25F">
-                                <rect key="frame" x="20" y="54" width="335" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="rGi-5q-rNO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="xDq-V1-rGA" firstAttribute="leading" secondItem="VFd-a4-nfV" secondAttribute="leading" constant="20" id="1MH-oj-kBa"/>
-                            <constraint firstItem="xDq-V1-rGA" firstAttribute="top" secondItem="Wlm-Y2-25F" secondAttribute="bottom" constant="20" id="9gX-7x-nd7"/>
-                            <constraint firstItem="Wlm-Y2-25F" firstAttribute="top" secondItem="VFd-a4-nfV" secondAttribute="top" constant="10" id="FiQ-Aj-IFB"/>
-                            <constraint firstItem="Wlm-Y2-25F" firstAttribute="leading" secondItem="VFd-a4-nfV" secondAttribute="leading" constant="20" id="b4C-Zm-1Mi"/>
-                            <constraint firstItem="VFd-a4-nfV" firstAttribute="trailing" secondItem="xDq-V1-rGA" secondAttribute="trailing" constant="20" id="eEt-gS-8Di"/>
-                            <constraint firstItem="VFd-a4-nfV" firstAttribute="trailing" secondItem="Wlm-Y2-25F" secondAttribute="trailing" constant="20" id="o9G-At-OoA"/>
-                            <constraint firstItem="VFd-a4-nfV" firstAttribute="bottom" secondItem="xDq-V1-rGA" secondAttribute="bottom" constant="20" id="zLO-xR-enA"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="VFd-a4-nfV"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="HCE-QG-LM7"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6s7-dJ-ykA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6782.608695652174" y="-916.304347826087"/>
-        </scene>
         <!--Contact-->
         <scene sceneID="HCg-4E-5Ln">
             <objects>
@@ -116,7 +62,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cotiso Nistorică" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="739-po-mWM">
-                                                                <rect key="frame" x="65" y="15" width="115.5" height="21"/>
+                                                                <rect key="frame" x="65" y="15" width="114.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="85i-U2-1LS"/>
                                                                 </constraints>
@@ -125,7 +71,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Co-fondator si instructor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgg-oy-dIC">
-                                                                <rect key="frame" x="65" y="41" width="156" height="21"/>
+                                                                <rect key="frame" x="65" y="41" width="154" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="EAR-3T-qbQ"/>
                                                                 </constraints>
@@ -187,7 +133,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carolina Căpitan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdE-9f-vVF">
-                                                                <rect key="frame" x="65" y="15" width="119" height="21"/>
+                                                                <rect key="frame" x="65" y="15" width="119.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="mk6-M4-xKl"/>
                                                                 </constraints>
@@ -196,7 +142,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Co-fondator si instructor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH3-KY-Nzu">
-                                                                <rect key="frame" x="65" y="41" width="156" height="21"/>
+                                                                <rect key="frame" x="65" y="41" width="154" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="KeB-rC-wvg"/>
                                                                 </constraints>
@@ -258,7 +204,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAILArte Dance School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJR-iz-x4k">
-                                                                <rect key="frame" x="65" y="15" width="166.5" height="21"/>
+                                                                <rect key="frame" x="65" y="15" width="168.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="Zg8-rd-OjB"/>
                                                                 </constraints>
@@ -267,7 +213,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bailarte.salsa@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCa-Jq-ZMB">
-                                                                <rect key="frame" x="65" y="41" width="164" height="21"/>
+                                                                <rect key="frame" x="65" y="41" width="158.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="ygh-4v-jVd"/>
                                                                 </constraints>
@@ -316,13 +262,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ne găsești în Cluj Napoca, la următoarele adrese" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HV-ZP-Fik">
-                                                <rect key="frame" x="20" y="347" width="331" height="42.5"/>
+                                                <rect key="frame" x="20" y="347" width="331" height="42"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAILArte Club" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6N-Vc-ZVg">
-                                                <rect key="frame" x="20" y="409.5" width="331" height="30"/>
+                                                <rect key="frame" x="20" y="409" width="331" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="YSu-QY-3MH"/>
                                                 </constraints>
@@ -331,7 +277,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urO-8k-HDo">
-                                                <rect key="frame" x="20" y="449.5" width="331" height="33"/>
+                                                <rect key="frame" x="20" y="449" width="331" height="33"/>
                                                 <string key="text">Strada Dorobanților, nr. 38 (colț cu strada 
 Rubin Patiția), la subsol.</string>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
@@ -339,7 +285,7 @@ Rubin Patiția), la subsol.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kVK-40-drr">
-                                                <rect key="frame" x="20" y="502.5" width="331" height="200"/>
+                                                <rect key="frame" x="20" y="502" width="331" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="wiy-Cd-J1G"/>
                                                 </constraints>
@@ -353,7 +299,7 @@ Rubin Patiția), la subsol.</string>
                                                 </connections>
                                             </mapView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BAILArte Studio" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLl-qM-9bT">
-                                                <rect key="frame" x="20" y="722.5" width="331" height="30"/>
+                                                <rect key="frame" x="20" y="722" width="331" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="g7F-CU-5Mn"/>
                                                 </constraints>
@@ -362,13 +308,13 @@ Rubin Patiția), la subsol.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strada București, nr. 44 (colț cu strada Iazului), Cladirea roz, Etaj 3." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPx-LL-jsp">
-                                                <rect key="frame" x="20" y="762.5" width="331" height="33"/>
+                                                <rect key="frame" x="20" y="762" width="331" height="33"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dga-2y-HOx">
-                                                <rect key="frame" x="20" y="815.5" width="331" height="200"/>
+                                                <rect key="frame" x="20" y="815" width="331" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="v4C-wQ-DN9"/>
                                                 </constraints>
@@ -460,7 +406,7 @@ Rubin Patiția), la subsol.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abonament" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXL-Hm-PEw">
-                                <rect key="frame" x="20" y="20" width="335" height="37"/>
+                                <rect key="frame" x="20" y="20" width="166" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="KNe-gg-rTj"/>
                                 </constraints>
@@ -631,6 +577,17 @@ Dupa expirarea abonamentului, acesta se va reinnoi automat pentru aceeasi perioa
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O49-Dl-6J0">
+                                <rect key="frame" x="294" y="28" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="3gU-CH-HFg"/>
+                                    <constraint firstAttribute="height" constant="30" id="OHh-Vz-6ke"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="restorePurchases:" destination="1qt-cZ-sXh" eventType="touchUpInside" id="Zhb-hX-1g2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -641,11 +598,12 @@ Dupa expirarea abonamentului, acesta se va reinnoi automat pentru aceeasi perioa
                             <constraint firstItem="lXL-Hm-PEw" firstAttribute="leading" secondItem="DzF-e8-gCg" secondAttribute="leading" constant="20" id="8o6-VS-8S7"/>
                             <constraint firstItem="rdz-te-BtJ" firstAttribute="top" secondItem="DzF-e8-gCg" secondAttribute="top" constant="65" id="DUN-6X-t5E"/>
                             <constraint firstItem="rdz-te-BtJ" firstAttribute="leading" secondItem="DzF-e8-gCg" secondAttribute="leading" id="LMa-TU-BVI"/>
+                            <constraint firstItem="O49-Dl-6J0" firstAttribute="top" secondItem="DzF-e8-gCg" secondAttribute="top" constant="28" id="QZ1-1v-sgA"/>
                             <constraint firstItem="R3f-Zl-wzO" firstAttribute="top" secondItem="lXL-Hm-PEw" secondAttribute="bottom" constant="10" id="Uyn-sU-piP"/>
                             <constraint firstItem="lXL-Hm-PEw" firstAttribute="top" secondItem="DzF-e8-gCg" secondAttribute="top" constant="20" id="VEc-uW-a4X"/>
-                            <constraint firstItem="DzF-e8-gCg" firstAttribute="trailing" secondItem="lXL-Hm-PEw" secondAttribute="trailing" constant="20" id="ceB-0z-7MG"/>
                             <constraint firstItem="R3f-Zl-wzO" firstAttribute="leading" secondItem="DzF-e8-gCg" secondAttribute="leading" constant="20" id="fGY-w8-OFM"/>
                             <constraint firstAttribute="trailing" secondItem="EdQ-YU-08Q" secondAttribute="trailing" id="knC-eA-M9q"/>
+                            <constraint firstItem="DzF-e8-gCg" firstAttribute="trailing" secondItem="O49-Dl-6J0" secondAttribute="trailing" constant="35" id="nt1-dR-nxe"/>
                             <constraint firstAttribute="bottom" secondItem="EdQ-YU-08Q" secondAttribute="bottom" id="oaA-l5-8kj"/>
                             <constraint firstItem="EdQ-YU-08Q" firstAttribute="top" secondItem="zqo-2b-9I7" secondAttribute="top" id="qO6-yQ-hGk"/>
                             <constraint firstItem="DzF-e8-gCg" firstAttribute="trailing" secondItem="R3f-Zl-wzO" secondAttribute="trailing" constant="20" id="xw6-wS-Zid"/>
@@ -1141,27 +1099,6 @@ Dupa expirarea abonamentului, acesta se va reinnoi automat pentru aceeasi perioa
             </objects>
             <point key="canvasLocation" x="-1642.4000000000001" y="-707.49625187406298"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="XaE-f9-g6f">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nGX-gG-irj" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="arz-qZ-EGH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <segue destination="9bQ-dl-Iy2" kind="relationship" relationship="rootViewController" id="r2q-ls-4iy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pd7-0B-hpt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5869.5652173913049" y="-916.304347826087"/>
-        </scene>
         <!--Tutoriale-->
         <scene sceneID="iIX-uB-w63">
             <objects>
@@ -1435,17 +1372,17 @@ Dupa expirarea abonamentului, acesta se va reinnoi automat pentru aceeasi perioa
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VideoCell" id="Jbg-O4-Dt7" customClass="VideoTableViewCell" customModule="BAILArte" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jbg-O4-Dt7" id="j8V-TT-Ko1">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PfR-Hj-QSi">
-                                                    <rect key="frame" x="20" y="5" width="100" height="100"/>
+                                                    <rect key="frame" x="20" y="5" width="156" height="88"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="2c5-EA-BFV"/>
-                                                        <constraint firstAttribute="height" constant="100" id="mm1-V4-qKP"/>
+                                                        <constraint firstAttribute="width" constant="156" id="2c5-EA-BFV"/>
+                                                        <constraint firstAttribute="height" constant="88" id="mm1-V4-qKP"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -1457,22 +1394,22 @@ Dupa expirarea abonamentului, acesta se va reinnoi automat pentru aceeasi perioa
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="JCZ-oa-BmQ">
-                                                    <rect key="frame" x="140" y="10" width="209" height="90"/>
+                                                    <rect key="frame" x="196" y="10" width="153" height="78"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wno-1C-kdV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="209" height="19"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecl-0X-73K">
-                                                            <rect key="frame" x="0.0" y="40" width="209" height="14.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecl-0X-73K">
+                                                            <rect key="frame" x="0.0" y="34.5" width="153" height="14"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                             <color key="textColor" red="0.83137254901960778" green="0.83137254901960778" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeo-3T-yai">
-                                                            <rect key="frame" x="0.0" y="75.5" width="209" height="14.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeo-3T-yai">
+                                                            <rect key="frame" x="0.0" y="64" width="153" height="14"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                             <color key="textColor" red="0.68627450980392157" green="0.66274509803921566" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1545,13 +1482,13 @@ Dupa expirarea abonamentului, acesta se va reinnoi automat pentru aceeasi perioa
                                 <rect key="frame" x="47.5" y="198.5" width="280" height="270"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continut Premium" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogd-cf-eub">
-                                        <rect key="frame" x="20" y="30" width="240" height="28.5"/>
+                                        <rect key="frame" x="20" y="30" width="240" height="28"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="24"/>
                                         <color key="textColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKH-yv-pX3">
-                                        <rect key="frame" x="20" y="78.5" width="240" height="49.5"/>
+                                        <rect key="frame" x="20" y="78" width="240" height="49"/>
                                         <string key="text">Acest video va fi disponibil doar
 dupa achizitionarea unui abonament
 premium. </string>
@@ -1560,7 +1497,7 @@ premium. </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMb-DZ-cTe">
-                                        <rect key="frame" x="47" y="153" width="186" height="40"/>
+                                        <rect key="frame" x="47" y="152" width="186" height="40"/>
                                         <color key="backgroundColor" red="0.95686274509803915" green="0.21176470588235294" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8yD-Pz-bWP"/>
@@ -1580,7 +1517,7 @@ premium. </string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBC-nI-Oq0">
-                                        <rect key="frame" x="96.5" y="218" width="87" height="30"/>
+                                        <rect key="frame" x="96.5" y="217" width="87" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Bmf-Xa-4FZ"/>
                                             <constraint firstAttribute="width" constant="87" id="In9-DX-Yef"/>
@@ -1626,49 +1563,6 @@ premium. </string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvU-ce-gcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1750" y="-1182"/>
-        </scene>
-        <!--Vimeo Player View Controller-->
-        <scene sceneID="Lbw-SH-O4j">
-            <objects>
-                <viewController storyboardIdentifier="VimeoPlayerVC" id="3Oc-ZQ-WEy" customClass="VimeoPlayerViewController" customModule="BAILArte" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oRK-x5-LiU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tU0-0e-PDg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="537"/>
-                                <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z88-RR-MTp">
-                                <rect key="frame" x="166" y="537" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="RJ5-cI-HGz"/>
-                                    <constraint firstAttribute="height" constant="30" id="Yso-CQ-m0U"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="play:" destination="3Oc-ZQ-WEy" eventType="touchUpInside" id="ZBq-v3-duE"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="Z88-RR-MTp" firstAttribute="centerX" secondItem="oRK-x5-LiU" secondAttribute="centerX" constant="1.5" id="1iZ-wz-eQF"/>
-                            <constraint firstItem="YQC-rO-x7f" firstAttribute="bottom" secondItem="tU0-0e-PDg" secondAttribute="bottom" constant="130" id="Qp1-ic-4Pu"/>
-                            <constraint firstItem="tU0-0e-PDg" firstAttribute="leading" secondItem="YQC-rO-x7f" secondAttribute="leading" id="UBZ-gY-qcl"/>
-                            <constraint firstAttribute="bottom" secondItem="Z88-RR-MTp" secondAttribute="bottom" constant="100" id="c9h-Mh-btD"/>
-                            <constraint firstItem="YQC-rO-x7f" firstAttribute="trailing" secondItem="tU0-0e-PDg" secondAttribute="trailing" id="iBI-sU-9r1"/>
-                            <constraint firstItem="tU0-0e-PDg" firstAttribute="top" secondItem="YQC-rO-x7f" secondAttribute="top" id="zQD-U8-KWd"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="YQC-rO-x7f"/>
-                    </view>
-                    <connections>
-                        <outlet property="playerView" destination="tU0-0e-PDg" id="Iba-gW-WgJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MSW-3e-ANG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3374" y="-1387"/>
         </scene>
         <!--Simple Alert View Controller-->
         <scene sceneID="Wd0-hh-mQj">

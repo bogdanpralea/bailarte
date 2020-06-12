@@ -35,14 +35,25 @@ class VideoTableViewCell: UITableViewCell {
         if let url = video.thumbnail  {
             getThumbnail(for: url)
         }
-        else if SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub) {
-            print("purchased")
-        }
-        else {
-            
+//        else {
+//            thumbnailImageView.image = UIImage(named: "lock.pdf")
+//        }
+        
+        if IAPManager.shared.subscriptionActiv {
+            print("activ")
+            //                self.goToSelectedVideo()
+        } else {
             thumbnailImageView.image = UIImage(named: "lock.pdf")
-            
         }
+        
+//        else if SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub) {
+//            print("purchased")
+//        }
+//        else {
+//
+//            thumbnailImageView.image = UIImage(named: "lock.pdf")
+//
+//        }
     }
 
     func getThumbnail(for urlString: String) {

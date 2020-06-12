@@ -60,16 +60,22 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         }
         else {
-            if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub)) {
-                goToSelectedVideo()
+            if IAPManager.shared.subscriptionActiv {
+                print("activ")
+                self.goToSelectedVideo()
+            } else {
+                print("nnot activ")
             }
-            else {
-                let alert = alertservice.alert() { [weak self] in
-                    self?.tabBarController?.selectedIndex = 3
-                }
+//            if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub)) {
                 
-                present(alert, animated: true)
-            }
+//            }
+//            else {
+//                let alert = alertservice.alert() { [weak self] in
+//                    self?.tabBarController?.selectedIndex = 3
+//                }
+//                
+//                present(alert, animated: true)
+//            }
         }
     }
 

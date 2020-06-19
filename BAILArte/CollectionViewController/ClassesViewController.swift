@@ -18,20 +18,29 @@ class ClassesViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        reloadData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name("ReloadMain"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        if !RequestManager.shared.noInternet {
+        reloadData()
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    @objc func reloadData() {
+        print("relload main")
+        if InternetConnectionManager.isConnectedToNetwork() {
             noInternetView.isHidden = true
             categories = FirebaseManager.shared.getCategories()
             categoriesNumberOfVideos = FirebaseManager.shared.categoriesNumberOfVideos
             classesCollectionView.reloadData()
         }
-        
-        navigationController?.navigationBar.isHidden = true
+        else {
+            noInternetView.isHidden = false
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

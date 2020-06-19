@@ -32,14 +32,15 @@ class FeedbackViewController: UIViewController, UITableViewDataSource, FeedbackT
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if !RequestManager.shared.noInternet {
+        if InternetConnectionManager.isConnectedToNetwork() {
             noInternetView.isHidden = true
             noInternetStackView.isHidden = true
             
             createEmptyAnswersArray()
         }
         else {
-            
+            noInternetView.isHidden = false
+            noInternetStackView.isHidden = false 
         }
         
     }

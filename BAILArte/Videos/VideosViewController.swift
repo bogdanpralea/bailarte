@@ -19,6 +19,8 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var videos = [Video]()
     var interstitial: GADInterstitial!
     let alertservice = AlertService()
+    var selectedIndex = 0
+    var selectedSeries: Series?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +30,40 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let request = GADRequest()
         interstitial.load(request)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTable), name: NSNotification.Name(rawValue: "ReloadTable"), object: nil)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
         self.tabBarController?.tabBar.isHidden = false
+        
+//        RequestManager.shared.checkInternet()
+        
+        if !InternetConnectionManager.isConnectedToNetwork() {
+            navigationController?.popToRootViewController(animated: true)
+            return 
+        }
+                
+        for i in 0...videos.count - 1 {
+            if let url = videos[i].url, url != "", videos[i].vimeoLink == nil {
+                
+                VimeoManager.shared.getVideoFromVimeo(urlString: url)
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver("ReloadTable")
+    }
+    
+    @objc func reloadTable() {
+        if let series = selectedSeries {
+            videos = FirebaseManager.shared.getVideos(for: series)
+            tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +79,7 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
         let video = videos[indexPath.row]
         if let _ = video.url {
             if interstitial.isReady {
@@ -65,17 +96,12 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.goToSelectedVideo()
             } else {
                 print("nnot activ")
+                let alert = alertservice.alert() { [weak self] in
+                    self?.tabBarController?.selectedIndex = 3
+                }
+
+                present(alert, animated: true)
             }
-//            if (SubscriptionTypes.store.isProductPurchased(SubscriptionTypes.monthlySub)) {
-                
-//            }
-//            else {
-//                let alert = alertservice.alert() { [weak self] in
-//                    self?.tabBarController?.selectedIndex = 3
-//                }
-//                
-//                present(alert, animated: true)
-//            }
         }
     }
 
@@ -86,10 +112,8 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func goToSelectedVideo() {
-        if let index = tableView.indexPathsForSelectedRows?.first {
-            if let urlString = videos[index.row].vimeoLink {
-                playVideo(from: urlString)
-            }
+        if let urlString = videos[selectedIndex].vimeoLink {
+            playVideo(from: urlString)
         }
     }
     

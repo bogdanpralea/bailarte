@@ -53,6 +53,7 @@
 		79D50629248CC4F600ED6609 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D50628248CC4F600ED6609 /* RequestManager.swift */; };
 		79DDD30E2484F57E0085C2E2 /* SimpleAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DDD30D2484F57E0085C2E2 /* SimpleAlertViewController.swift */; };
 		79DF93EC248BF6FC008A7E7B /* VimeoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DF93EB248BF6FC008A7E7B /* VimeoManager.swift */; };
+		79EFCA0224961A0F00C2EC82 /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EFCA0124961A0F00C2EC82 /* InternetConnectionManager.swift */; };
 		D0F4B6E8239B4DD72FD712C3 /* Pods_BAILArte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318A6CF5A3F4B9DE9FF5D1D4 /* Pods_BAILArte.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,7 @@
 		79D50628248CC4F600ED6609 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		79DDD30D2484F57E0085C2E2 /* SimpleAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertViewController.swift; sourceTree = "<group>"; };
 		79DF93EB248BF6FC008A7E7B /* VimeoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoManager.swift; sourceTree = "<group>"; };
+		79EFCA0124961A0F00C2EC82 /* InternetConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				795CAA0224435C1C004EA7CE /* FirebaseManager.swift */,
+				79EFCA0124961A0F00C2EC82 /* InternetConnectionManager.swift */,
 				79D50628248CC4F600ED6609 /* RequestManager.swift */,
 				79DF93EB248BF6FC008A7E7B /* VimeoManager.swift */,
 				797CAE8624785A23009BB025 /* AlertViewController.swift */,
@@ -428,6 +431,7 @@
 				7942F5F5246EDD8B002223BA /* IAPManager.swift in Sources */,
 				7912E29C2438E61400402727 /* VideosViewController.swift in Sources */,
 				795CA9F42442331C004EA7CE /* Date+CurrenTimeMillis.swift in Sources */,
+				79EFCA0224961A0F00C2EC82 /* InternetConnectionManager.swift in Sources */,
 				7961D81824757D18002A9E68 /* VimeoClient.swift in Sources */,
 				794EB0432440C3E800F6AFC9 /* UIColorExtension.swift in Sources */,
 				7968B9452427B2D500FBBE7A /* AppDelegate.swift in Sources */,

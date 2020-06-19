@@ -40,6 +40,7 @@ class SeriesViewController: UIViewController, UITabBarDelegate, UITableViewDataS
         if let nextViewController = segue.destination as? VideosViewController {
             if let indexPath = tableView.indexPathsForSelectedRows?.first {
                 nextViewController.videos = FirebaseManager.shared.getVideos(for: series[indexPath.row])
+                nextViewController.selectedSeries = series[indexPath.row]
                 nextViewController.navigationItem.title = series[indexPath.row].name
             }
         }

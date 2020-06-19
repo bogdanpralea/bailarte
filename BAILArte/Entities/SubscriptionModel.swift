@@ -10,6 +10,8 @@ import UIKit
 
 public struct SubscriptionModel: Codable {
     var title: String
-    var monthlyPrice: String
+    var monthlyPrice: String?
     var totalPrice: String
+    var period: Int
+    var price: Float
 }

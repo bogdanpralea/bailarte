@@ -14,3 +14,7 @@ public struct MainModel: Codable {
     var videos: [Video]
     var series: [Series]
 }
+
+public struct PremiumModel: Codable {
+    var videos: [Video]
+}

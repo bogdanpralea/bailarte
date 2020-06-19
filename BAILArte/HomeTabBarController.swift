@@ -24,10 +24,9 @@ class HomeTabBarController: UITabBarController {
     
 
     @objc func appBecameActive() {
-//        if RequestManager.shared.noInternet {
-//            RequestManager.shared.startRequests()
-//        }
-        print("App moved to active!")
+        if RequestManager.shared.noInternet {
+            RequestManager.shared.startRequests()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

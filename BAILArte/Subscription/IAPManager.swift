@@ -50,13 +50,14 @@ public class IAPManager: NSObject  {
     }
     
     func purchaseProduct(product : SKProduct, success: @escaping SuccessBlock, failure: @escaping FailureBlock){
-        
+        print("purchase")
         guard SKPaymentQueue.canMakePayments() else {
             return
         }
         guard SKPaymentQueue.default().transactions.last?.transactionState != .purchasing else {
             return
         }
+        print("purchase 1")
         self.successBlock = success
         self.failureBlock = failure
         let payment = SKPayment(product: product)
@@ -64,6 +65,7 @@ public class IAPManager: NSObject  {
     }
     
     func restorePurchases(success: @escaping SuccessBlock, failure: @escaping FailureBlock){
+        print("iap restore")
         self.successBlock = success
         self.failureBlock = failure
         SKPaymentQueue.default().restoreCompletedTransactions()
@@ -73,7 +75,7 @@ public class IAPManager: NSObject  {
      This code doesn't handle errors.
      */
     func refreshSubscriptionsStatus(callback : @escaping SuccessBlock, failure : @escaping FailureBlock){
-        
+        print("refresh")
         self.refreshSubscriptionSuccessBlock = callback
         self.refreshSubscriptionFailureBlock = failure
         
@@ -116,6 +118,7 @@ public class IAPManager: NSObject  {
      This code doesn't handle errors or some situations like cancellation date.
      */
     private func parseReceipt(_ json : Dictionary<String, Any>) {
+        print("parse")
         guard let receipts_array = json["latest_receipt_info"] as? [Dictionary<String, Any>] else {
             self.refreshSubscriptionFailureBlock?(nil)
             self.cleanUpRefeshReceiptBlocks()
@@ -124,12 +127,63 @@ public class IAPManager: NSObject  {
         print("nnumber of receipts:\(receipts_array.count)")
         for receipt in receipts_array {
             let productID = receipt["product_id"] as! String
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss VV"
-            if let date = formatter.date(from: receipt["expires_date"] as! String) {
-                if date > Date() {
-                    // do not save expired date to user defaults to avoid overwriting with expired date
-                    UserDefaults.standard.set(date, forKey: productID)
+//            let formatter = DateFormatter()
+//            let dFormatter = DateFormatter()
+//            formatter.dateStyle = .long
+//            formatter.timeStyle = .long
+//            formatter.locale = Locale.current
+//            formatter.timeZone = TimeZone(abbreviation: "GMT+3")
+//            formatter.timeZone = TimeZone.current
+//            if let date = date {
+//                let dateGet = dFormatter.string(from: date)
+//                completion(date)
+//                print("Formatted Time : \(dateGet)")
+//            } else {
+//            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss VV"
+//            let dateDate = formatter.date(from: receipt["expires_date"] as! String)
+//            let dateDate1 = formatter.date(from: receipt["expires_date"] as! String)
+//            let dateDate2 = formatter.date(from: receipt["expires_date"] as! String)
+
+            if let interval = Double(receipt["expires_date_ms"] as! String)   {
+                let date = Date(timeIntervalSince1970: interval/1000)
+                
+                let now = date
+                 let formatter = ISO8601DateFormatter()
+                 let datetime = formatter.string(from: now)
+   
+                let dateToUse = formatter.date(from: datetime)
+   
+                print("expiration date: \(dateToUse)")
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.timeZone = TimeZone.current
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" //Specify your format that you want
+                let strDateToSave = dateFormatter.string(from: date)
+
+//                if let dateDate = dateFormatter.date(from: strDate) {
+//            }
+                if let dateDate = dateToUse {
+//            if let date = formatter.date(from: receipt["expires_date"] as! String) {
+                RequestManager.shared.getServerTimer { (serverDate) in
+                    if let serverDate = serverDate, dateDate > serverDate {
+                        print("expiration date: \(dateDate)")
+                        print("server date: \(dateDate)")
+                        // do not save expired date to user defaults to avoid overwriting with expired date
+                        UserDefaults.standard.set(datetime, forKey: "dateToCompare")
+                        UserDefaults.standard.set(strDateToSave, forKey: "date")
+                        UserDefaults.standard.set(productID, forKey: "id")
+                        FirebaseManager.shared.getPremiumData()
+                        IAPManager.shared.subscriptionActiv = true
+                        DispatchQueue.main.async {
+                            NotificationCenter.default.post(name: NSNotification.Name("ReloadSubscription"), object: nil)
+                        }
+                        
+                    }
+                    else {
+                        IAPManager.shared.subscriptionActiv = false
+                        print("expired")
+                    }
+                }
                 }
             }
         }
@@ -148,7 +202,7 @@ public class IAPManager: NSObject  {
     
     public func loadProducts() {
 //        productsRequestCompletionHandler = completionHandler
-        
+        print("loadProducts")
         let request = SKProductsRequest.init(productIdentifiers: productIds)
         request.delegate = self
         request.start()
@@ -165,6 +219,7 @@ public class IAPManager: NSObject  {
 extension IAPManager : SKRequestDelegate {
     
     public func requestDidFinish(_ request: SKRequest) {
+        print("refresh finish")
         if request is SKReceiptRefreshRequest {
             refreshSubscriptionsStatus(callback: self.successBlock ?? {}, failure: self.failureBlock ?? {_ in})
         }
@@ -222,6 +277,7 @@ extension IAPManager: SKPaymentTransactionObserver {
     }
     
     private func notifyIsPurchased(transaction: SKPaymentTransaction) {
+        print("notifyIsPurchased")
         refreshSubscriptionsStatus(callback: {
             self.successBlock?()
             self.cleanUp()
